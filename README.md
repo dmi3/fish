@@ -16,7 +16,6 @@ Instalation
 # [aliases.fish](https://github.com/dmi3/fish/blob/master/aliases.fish)
 
 Useful aliases
-<img src="https://developer.run/pic/fish_title.png"/>
 <hr/>
 
 # [colors.fish](https://github.com/dmi3/fish/blob/master/colors.fish)
@@ -42,7 +41,7 @@ Entry point that includes all other configs
 
 # [developer.fish](https://github.com/dmi3/fish/blob/master/developer.fish)
 
-Function useful for developers  
+Functions useful for developers  
 <hr/>
 
 # [main.fish](https://github.com/dmi3/fish/blob/master/main.fish)
@@ -54,6 +53,7 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
   - Edit command before execution
   - Delete history entry (very useful for no longer actual commands)
 <img src="https://developer.run/pic/fish_history.png"/>
+
 * Ctrl+E to show recent directories
 * Ctrl+F searches by filename
 * Alt+Ctrl+F searches by file contents
@@ -63,6 +63,7 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
   - Comes handy when you start typing command, then realize wrong dir
 * Prints error status in case of command failure
 * Prints directory and currently running command in tab title ↓
+
 <img src="https://developer.run/pic/fish_title.png"/>
 <hr/>
 
@@ -81,8 +82,11 @@ Decription
 * To make benefit of Fish shell autocompletion and history
 * Closes after one command is executed
 * If command fails, leaves window to inspect error message
+
 <img src="https://developer.run/pic/singlecmd.fish.gif"/>
+
 For example you want execute `git clone git@github.com:dmi3/bin.git` in current directory from Double Commander:
+
 * Press `Shift+F2` and terminal window appears in left bottom corner of Double Commander window
 * First you want `git` and `clone` to be autocompleted using Fish
 * During clone process you want to see `git` command output to monitor progeress
@@ -109,6 +113,6 @@ Usage
 
 # [web.fish](https://github.com/dmi3/fish/blob/master/web.fish)
 
-Calls to varios Web services
+Calls to various Web services
 
 <hr/>

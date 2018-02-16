@@ -1,4 +1,4 @@
-#  Calls to varios Web services
+#  Calls to various Web services
 #  
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)#
 

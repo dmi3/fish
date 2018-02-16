@@ -6,11 +6,11 @@
 #  * To make benefit of Fish shell autocompletion and history
 #  * Closes after one command is executed
 #  * If command fails, leaves window to inspect error message
-#
+#  
 #  <img src="https://developer.run/pic/singlecmd.fish.gif"/>
-#
+#  
 #  For example you want execute `git clone git@github.com:dmi3/bin.git` in current directory from Double Commander:
-#
+#  
 #  * Press `Shift+F2` and terminal window appears in left bottom corner of Double Commander window
 #  * First you want `git` and `clone` to be autocompleted using Fish
 #  * During clone process you want to see `git` command output to monitor progeress

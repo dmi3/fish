@@ -1,6 +1,6 @@
 #
 #  Useful aliases
-#  <img src="https://developer.run/pic/fish_title.png"/>
+#
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 # Show 3 (next and prev) months in cal, start week on monday

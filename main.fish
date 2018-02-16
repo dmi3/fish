@@ -5,7 +5,7 @@
 #    - Edit command before execution
 #    - Delete history entry (very useful for no longer actual commands)
 #  <img src="https://developer.run/pic/fish_history.png"/>
-#
+#  
 #  * Ctrl+E to show recent directories
 #  * Ctrl+F searches by filename
 #  * Alt+Ctrl+F searches by file contents
@@ -15,7 +15,7 @@
 #    - Comes handy when you start typing command, then realize wrong dir
 #  * Prints error status in case of command failure
 #  * Prints directory and currently running command in tab title ↓
-#
+#  
 #  <img src="https://developer.run/pic/fish_title.png"/>
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 

@@ -1,4 +1,4 @@
-#  Function useful for developers  
+#  Functions useful for developers  
 #
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
