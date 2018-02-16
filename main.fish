@@ -35,7 +35,7 @@ function fish_user_key_bindings
     end
 
     # Exit on ESC if single command mode enabled
-    # See <https://github.com/dmi3/bin/blob/master/singlecmd.fish>
+    # See <https://github.com/dmi3/fish/blob/master/singlecmd.fish>
     if [ "$SINGLE_COMMAND" = "true" ]
       bind \e 'exit 0'
     end
@@ -71,7 +71,7 @@ function show_exit_code --on-event fish_postexec --description "Show exit code o
     end
 
     # Exit after first command
-    # See <https://github.com/dmi3/bin/blob/master/singlecmd.fish>
+    # See <https://github.com/dmi3/fish/blob/master/singlecmd.fish>
     if [ "$SINGLE_COMMAND" = "true" ]
       if [ $last_status -ne 0 ]
         read -P "Command failed ↑"
