@@ -12,10 +12,10 @@
 #  For example you want execute `git clone git@github.com:dmi3/bin.git` in current directory from Double Commander:
 #
 #  1. Press `Shift+F2` and terminal window appears in left bottom corner of Double Commander window
-#  1. First you want `git` and `clone` to be autocompleted using Fish
-#  1. During clone process you want to see `git` command output to monitor progeress
-#  1. If everything is ok, promt will close
-#  1. In case of error you will have chance to read error message
+#  2. First you want `git` and `clone` to be autocompleted using Fish
+#  3. During clone process you want to see `git` command output to monitor progeress
+#  4. If everything is ok, promt will close
+#  5. In case of error you will have chance to read error message
 #
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/bin)
 
