@@ -1,3 +1,8 @@
+#  Two line propmt with full path and Git integration that scales nicely.
+#  <img src="https://developer.run/pic/fish_prompt.gif">
+#
+#  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
+
 function fish_prompt
     set_color 777 --bold
 

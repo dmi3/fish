@@ -6,9 +6,11 @@
 #  ----------
 #  1. `git clone git@github.com:dmi3/fish.git`
 #  2. Install configs:
-#     - *All* run `./_install.fish` ⚠ this will remove `~/.config/fish`! Backup before running
-#     - *Some* [source](https://github.com/dmi3/bin/blob/master/config.fish) files you are interested in your `~/.config/fish/config.fish`
-#  3. `fish -c update-fzf`
+#     - **All**: run `./_install.fish` ⚠ this will remove `~/.config/fish`! Backup before running
+#     - **Some**: [source](https://github.com/dmi3/bin/blob/master/config.fish) files you are interested in your `~/.config/fish/config.fish`
+#  3. Install [fzf](https://github.com/junegunn/fzf) or run `fish -c update-fzf`
+#
+#  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 read -P "⚠ Warning this will remove $XDG_CONFIG_HOME/fish! Backup before running"
 rm -rf "$XDG_CONFIG_HOME/fish"; or true

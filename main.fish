@@ -1,16 +1,23 @@
-#  ----------
-#  Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
+#  Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://github.com/junegunn/fzf)
+#  
+#  * Ctrl+R show fzf (fuzzy) history search where you can:
+#    - Execute previos command
+#    - Edit command before execution
+#    - Delete history entry (very useful for no longer actual commands)
+#  <img src="https://developer.run/pic/fish_history.png"/>
+#  * Ctrl+E to show recent directories
+#  * Ctrl+F searches by filename
+#  * Alt+Ctrl+F searches by file contents
+#  * Convinient navigation using `Alt+Ctrl` + `→` `←` `↑`
+#    - History back/forward/go to parent dir
+#    - You can use Fish as file manager!
+#    - Comes handy when you start typing command, then realize wrong dir
+#  * Prints error status in case of command failure
+#  * Prints directory and currently running command in tab title ↓
+#  <img src="https://developer.run/pic/fish_title.png"/>
+#  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
-#  Instalation
-#  ----------
-#  1. [Install fish](http://fishshell.com/#platform_tabs)
-#  2. `curl https://raw.githubusercontent.com/dmi3/bin/master/config/fish/config.fish --create-dirs -o ~/.config/fish/config.fish`
-#  3. `fish -c update-fzf`
-
-
-#
-#  Fish config
-#  https://fishshell.com/docs/current/
+# https://fishshell.com/docs/current/
 
 # https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish
 # fish_key_reader
