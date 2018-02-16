@@ -1,15 +1,16 @@
 #!/usr/bin/fish
 
-#  <img src="https://developer.run/pic/singlecmd.fish.gif"/>
-#
 #  Decription
 #  -----------
 #  * Prompts for single Fish command in left bottom corner of given application window
 #  * To make benefit of Fish shell autocompletion and history
-#  * Closes after first command is executed
+#  * Closes after one command is executed
 #  * If command fails, leaves window to inspect error message
 #
+#  <img src="https://developer.run/pic/singlecmd.fish.gif"/>
+#
 #  For example you want execute `git clone git@github.com:dmi3/bin.git` in current directory from Double Commander:
+#
 #  1. Press `Shift+F2` and terminal window appears in left bottom corner of Double Commander window
 #  1. First you want `git` and `clone` to be autocompleted using Fish
 #  1. During clone process you want to see `git` command output to monitor progeress

@@ -1,6 +1,6 @@
 # Fish Shell Goodies
 
-# [_install.fish](https://github.com/fish/bin/blob/master/_install.fish)
+# [_install.fish](https://github.com/dmi3/fish/blob/master/_install.fish)
 
 Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
 
@@ -13,17 +13,17 @@ Instalation
 3. `fish -c update-fzf`
 <hr/>
 
-# [aliases.fish](https://github.com/fish/bin/blob/master/aliases.fish)
+# [aliases.fish](https://github.com/dmi3/fish/blob/master/aliases.fish)
 
  aunpack "$argv" --save-outdir=/tmp/___aaaunpack
  cd (cat /tmp/___aaaunpack)
 <hr/>
 
-# [colors.fish](https://github.com/fish/bin/blob/master/colors.fish)
+# [colors.fish](https://github.com/dmi3/fish/blob/master/colors.fish)
 
 <hr/>
 
-# [completions/todo.fish](https://github.com/fish/bin/blob/master/completions/todo.fish)
+# [completions/todo.fish](https://github.com/dmi3/fish/blob/master/completions/todo.fish)
 
 
 Decription
@@ -33,15 +33,15 @@ Search script for strings starting with `--` and add them
 to Fish completion as arguments for `todo` command
 <hr/>
 
-# [config.fish](https://github.com/fish/bin/blob/master/config.fish)
+# [config.fish](https://github.com/dmi3/fish/blob/master/config.fish)
 
 <hr/>
 
-# [developer.fish](https://github.com/fish/bin/blob/master/developer.fish)
+# [developer.fish](https://github.com/dmi3/fish/blob/master/developer.fish)
 
 <hr/>
 
-# [main.fish](https://github.com/fish/bin/blob/master/main.fish)
+# [main.fish](https://github.com/dmi3/fish/blob/master/main.fish)
 
 ----------
 Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
@@ -55,20 +55,20 @@ Fish config
 https://fishshell.com/docs/current/
 <hr/>
 
-# [prompt.fish](https://github.com/fish/bin/blob/master/prompt.fish)
+# [prompt.fish](https://github.com/dmi3/fish/blob/master/prompt.fish)
 
 <hr/>
 
-# [singlecmd.fish](https://github.com/fish/bin/blob/master/singlecmd.fish)
+# [singlecmd.fish](https://github.com/dmi3/fish/blob/master/singlecmd.fish)
 
-<img src="https://developer.run/pic/singlecmd.fish.gif"/>
 
 Decription
 -----------
 * Prompts for single Fish command in left bottom corner of given application window
 * To make benefit of Fish shell autocompletion and history
-* Closes after first command is executed
+* Closes after one command is executed
 * If command fails, leaves window to inspect error message
+<img src="https://developer.run/pic/singlecmd.fish.gif"/>
 For example you want execute `git clone git@github.com:dmi3/bin.git` in current directory from Double Commander:
 1. Press `Shift+F2` and terminal window appears in left bottom corner of Double Commander window
 1. First you want `git` and `clone` to be autocompleted using Fish
@@ -94,6 +94,6 @@ Usage
   * Hot Key: `Shift+F2`
 <hr/>
 
-# [web.fish](https://github.com/fish/bin/blob/master/web.fish)
+# [web.fish](https://github.com/dmi3/fish/blob/master/web.fish)
 
 <hr/>
