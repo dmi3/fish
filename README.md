@@ -15,12 +15,13 @@ Instalation
 
 # [aliases.fish](https://github.com/dmi3/fish/blob/master/aliases.fish)
 
- aunpack "$argv" --save-outdir=/tmp/___aaaunpack
- cd (cat /tmp/___aaaunpack)
+Useful aliases
+<img src="https://developer.run/pic/fish_title.png"/>
 <hr/>
 
 # [colors.fish](https://github.com/dmi3/fish/blob/master/colors.fish)
 
+Dark theme. See screenshots.
 <hr/>
 
 # [completions/todo.fish](https://github.com/dmi3/fish/blob/master/completions/todo.fish)
@@ -35,10 +36,13 @@ to Fish completion as arguments for `todo` command
 
 # [config.fish](https://github.com/dmi3/fish/blob/master/config.fish)
 
+Entry point that includes all other configs
+
 <hr/>
 
 # [developer.fish](https://github.com/dmi3/fish/blob/master/developer.fish)
 
+Function useful for developers  
 <hr/>
 
 # [main.fish](https://github.com/dmi3/fish/blob/master/main.fish)
@@ -104,5 +108,7 @@ Usage
 <hr/>
 
 # [web.fish](https://github.com/dmi3/fish/blob/master/web.fish)
+
+Calls to varios Web services
 
 <hr/>

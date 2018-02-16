@@ -1,6 +1,7 @@
 #
-# Useful aliases
-#
+#  Useful aliases
+#  <img src="https://developer.run/pic/fish_title.png"/>
+#  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 # Show 3 (next and prev) months in cal, start week on monday
 alias cal="ncal -bM3"
@@ -43,11 +44,6 @@ end
 function open --description "Open file in new process"
   xdg-open $argv & 
 end
-
-# function aunpack --description "Unpack archive"
-#   aunpack "$argv" --save-outdir=/tmp/___aaaunpack
-#   cd (cat /tmp/___aaaunpack)
-# end
 
 function amount --description "Mount archive"
   /usr/lib/gvfs/gvfsd-archive file=$argv 2>/dev/null &

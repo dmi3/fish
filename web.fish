@@ -1,6 +1,6 @@
-#
-# Web services
-#
+#  Calls to varios Web services
+#  
+#  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)#
 
 # Shows external ip
 alias myip='curl ifconfig.co'

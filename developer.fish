@@ -1,3 +1,7 @@
+#  Function useful for developers  
+#
+#  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
+
 alias git-show-unpushed-commits='git cherry -v' 
 
 function git-revert-file --description "Revert single file in git"

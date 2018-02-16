@@ -1,4 +1,6 @@
-# Color configuration
+#  Dark theme. See screenshots.
+#  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
+
 # https://github.com/benmarten/Monokai_Fish_OSX/blob/master/set_colors.fish
 # https://fishshell.com/docs/current/index.html#variables-color
 
