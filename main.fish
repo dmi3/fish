@@ -109,12 +109,13 @@ function fzf-history-widget
     history | fzf -q (commandline) -e +m --tiebreak=index --sort \
       --preview-window 'up:50%:wrap:hidden' \
       --preview 'echo {}' \
-      --bind "alt-e:execute(echo \" commandline {}\")+cancel+cancel" \
+      --bind "left:execute(echo \" commandline {}\")+cancel+cancel" \
+      --bind "right:execute(echo \" commandline {}\")+cancel+cancel" \
       --bind "ctrl-d:execute(echo \" history delete {}\")+cancel+cancel" \
       --bind "ctrl-x:execute(echo \" printf {} | xclip -sel clip\")+cancel+cancel" \
       --bind "ctrl-a:toggle-preview" \
       --bind "ctrl-e:execute(echo \" eval scd\")+cancel+cancel" \
-      --header "Enter: exec, Ctrl+X: copy, Alt+E: edit, Ctrl+D: delete, Ctrl+A: show full" | read -l result
+      --header "⏎: run; ←→: edit; Ctrl+X: copy; Ctrl+D: delete; Ctrl+A: show full" | read -l result
     and commandline $result
     and commandline -f repaint
     and commandline -f execute

@@ -1,6 +1,6 @@
 # Fish Shell Goodies
 
-# [_install.fish](https://github.com/dmi3/fish/blob/master/_install.fish)
+# [_install.fish](https://github.com/fish/bin/blob/master/_install.fish)
 
 Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
 
@@ -13,17 +13,17 @@ Instalation
 3. Install [fzf](https://github.com/junegunn/fzf) or run `fish -c update-fzf`
 <hr/>
 
-# [aliases.fish](https://github.com/dmi3/fish/blob/master/aliases.fish)
+# [aliases.fish](https://github.com/fish/bin/blob/master/aliases.fish)
 
 Useful aliases
 <hr/>
 
-# [colors.fish](https://github.com/dmi3/fish/blob/master/colors.fish)
+# [colors.fish](https://github.com/fish/bin/blob/master/colors.fish)
 
 Dark theme. See screenshots.
 <hr/>
 
-# [completions/todo.fish](https://github.com/dmi3/fish/blob/master/completions/todo.fish)
+# [completions/todo.fish](https://github.com/fish/bin/blob/master/completions/todo.fish)
 
 
 Decription
@@ -33,18 +33,18 @@ Search script for strings starting with `--` and add them
 to Fish completion as arguments for `todo` command
 <hr/>
 
-# [config.fish](https://github.com/dmi3/fish/blob/master/config.fish)
+# [config.fish](https://github.com/fish/bin/blob/master/config.fish)
 
 Entry point that includes all other configs
 
 <hr/>
 
-# [developer.fish](https://github.com/dmi3/fish/blob/master/developer.fish)
+# [developer.fish](https://github.com/fish/bin/blob/master/developer.fish)
 
 Functions useful for developers  
 <hr/>
 
-# [main.fish](https://github.com/dmi3/fish/blob/master/main.fish)
+# [main.fish](https://github.com/fish/bin/blob/master/main.fish)
 
 Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://github.com/junegunn/fzf)
 
@@ -67,13 +67,13 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 <img src="https://developer.run/pic/fish_title.png"/>
 <hr/>
 
-# [prompt.fish](https://github.com/dmi3/fish/blob/master/prompt.fish)
+# [prompt.fish](https://github.com/fish/bin/blob/master/prompt.fish)
 
 Two line propmt with full path and Git integration that scales nicely.
 <img src="https://developer.run/pic/fish_prompt.gif">
 <hr/>
 
-# [singlecmd.fish](https://github.com/dmi3/fish/blob/master/singlecmd.fish)
+# [singlecmd.fish](https://github.com/fish/bin/blob/master/singlecmd.fish)
 
 
 Decription
@@ -111,7 +111,7 @@ Usage
   * Hot Key: `Shift+F2`
 <hr/>
 
-# [web.fish](https://github.com/dmi3/fish/blob/master/web.fish)
+# [web.fish](https://github.com/fish/bin/blob/master/web.fish)
 
 Calls to various Web services
 
