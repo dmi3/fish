@@ -1,4 +1,4 @@
-#  Calls to various Web services
+#  Calls to various CLI friendly web services
 #  
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)#
 

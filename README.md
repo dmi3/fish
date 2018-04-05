@@ -71,6 +71,8 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 
 Two line propmt with full path and Git integration that scales nicely.
 <img src="https://developer.run/pic/fish_prompt.gif">
+     #     set_color F92672
+     #     echo -n " ⬆$__git_unpushed_commits "
 <hr/>
 
 # [singlecmd.fish](https://github.com/dmi3/fish/blob/master/singlecmd.fish)
@@ -113,6 +115,6 @@ Usage
 
 # [web.fish](https://github.com/dmi3/fish/blob/master/web.fish)
 
-Calls to various Web services
+Calls to various CLI friendly web services
 
 <hr/>
