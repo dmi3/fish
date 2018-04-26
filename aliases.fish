@@ -42,7 +42,7 @@ function mkcd --description "Create and cd to directory"
 end
 
 function open --description "Open file in new process"
-  xdg-open $argv & 
+   env XDG_CURRENT_DESKTOP=X-Generic xdg-open $argv & 
 end
 
 function amount --description "Mount archive"
