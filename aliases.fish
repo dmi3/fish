@@ -30,11 +30,15 @@ alias xs='cd'
 
 alias ...='cd ../..'
 
+# Free space on physical drives
+alias fs='df -x squashfs -x tmpfs -x devtmpfs'
+
+# Size of file or directory
 alias sizeof="du -hs"
 
 function ll --description "Scroll ll if theres more files that fit on screen"
   ls -l $argv --color=always | less -R -X -F
-end  
+end
 
 function mkcd --description "Create and cd to directory"
   mkdir $argv
