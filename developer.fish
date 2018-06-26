@@ -4,6 +4,8 @@
 
 alias git-show-unpushed-commits='git cherry -v' 
 
+alias ccat='pygmentize -g'
+
 function git-revert-file --description "Revert single file in git"
   git reset HEAD $argv; git checkout $argv
 end
@@ -14,4 +16,8 @@ function gradle --description "Use ./gradlew if exists"
   else
     eval (which gradle) $argv
   end
+end
+
+function src --description "Open/edit source of script located in $PATH" --wraps which
+  gedit (which $argv)
 end
