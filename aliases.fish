@@ -36,6 +36,9 @@ alias fs='df -x squashfs -x tmpfs -x devtmpfs'
 # Size of file or directory
 alias sizeof="du -hs"
 
+# Connect to wifi
+alias connect=nmtui
+
 function ll --description "Scroll ll if theres more files that fit on screen"
   ls -l $argv --color=always | less -R -X -F
 end
