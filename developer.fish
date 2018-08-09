@@ -18,6 +18,17 @@ function gradle --description "Use ./gradlew if exists"
   end
 end
 
-function src --description "Open/edit source of script located in $PATH" --wraps which
-  gedit (which $argv)
+function src --description 'Open/edit source of script or function located in $PATH' --wraps which
+  switch (functions --details $argv)
+    case '-'
+      gedit (grep -rwI "alias $argv" ~/.config/fish/* | string split ":" | head -n 1)
+    case 'n/a'
+      gedit (which $argv)
+    case '*'
+      gedit (functions --details $argv)
+  end
+end
+
+function td --description "Add to ~/todo.md list"
+  echo -e "\n- [ ] $argv" >> ~/todo.md
 end
