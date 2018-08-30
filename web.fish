@@ -12,6 +12,10 @@ function random-name
   curl www.pseudorandom.name
 end
 
+function random-alias
+  curl https://frightanic.com/goodies_content/docker-names.php
+end
+
 function random-email --description "Copy random email in one of Mailinator subdomains and provide link to check it"
   set domain (echo -e \
 "notmailinator.com
