@@ -13,7 +13,8 @@ function random-name
 end
 
 function random-alias
-  curl https://frightanic.com/goodies_content/docker-names.php
+  curl -s https://frightanic.com/goodies_content/docker-names.php | tee /dev/tty | xclip -sel clip; and echo -e "\ncopied to clipboard"
+  
 end
 
 function random-email --description "Copy random email in one of Mailinator subdomains and provide link to check it"
