@@ -54,3 +54,5 @@ end
 function translate
   translate-yandex.sh "$argv"
 end
+
+alias xkcd='curl -s (lynx --dump https://c.xkcd.com/random/comic/ | grep png | string trim) -o /tmp/xkcd; convert -negate -brightness-contrast 20  /tmp/xkcd /tmp/xkcd; kitty +kitten icat /tmp/xkcd'

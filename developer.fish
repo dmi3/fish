@@ -10,6 +10,10 @@ function git-revert-file --description "Revert single file in git"
   git reset HEAD $argv; git checkout $argv
 end
 
+function git-wat --description "Show 5 latest commits"
+  git log --pretty="format:%s" --abbrev-commit  HEAD~5..HEAD
+end
+
 function gradle --description "Use ./gradlew if exists"
   if test -e ./gradlew
     ./gradlew $argv

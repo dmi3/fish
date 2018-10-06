@@ -3,8 +3,6 @@
 #
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
-# Show 3 (next and prev) months in cal, start week on monday
-alias cal="ncal -bM3"
 
 # Create missing directories in path
 alias mkdir='mkdir -pv'
@@ -113,14 +111,31 @@ function b --description "Exec command in bash. Useful when copy-pasting command
   bash -c "$argv"
 end
 
+function c --description "Math using Python"
+  python -c "print($argv)"
+end
+
 # If Sublime Text installed - use it instead of Gedit
 if type -q subl
   alias gedit=subl
 end
 
+# Show 3 (next and prev) months in cal, start week on monday
+# Use [nicl](https://github.com/dmi3/nicl) in installed
+if type -q nicl
+  alias cal="nicl -w3 -f ~/git/stuff/documents/bank_days.csv"  
+else
+  alias cal="ncal -bM3"
+end
+
 # If [sssh](https://github.com/dmi3/bin/blob/master/sssh) installed - use it instead of ssh
 if type -q sssh
   alias ssh=sssh
+end
+
+# Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
+if type -q kitty
+  alias icat="kitty +kitten icat"
 end
 
 function subl --description "Starts Sublime Text. Additionally supports piping (i.e. `ls | subl`) and urls (i.e. `subl http://jenkins/logs`)"
