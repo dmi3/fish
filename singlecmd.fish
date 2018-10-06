@@ -21,7 +21,7 @@
 
 #  Requirements
 #  ------------
-#  * `sudo apt-get install fish wmcrtl xterm`
+#  * `sudo apt-get install fish wmctrl xterm`
 
 #  Usage
 #  -----

@@ -97,7 +97,7 @@ For example you want execute `git clone git@github.com:dmi3/bin.git` in current 
 
 Requirements
 ------------
-* `sudo apt-get install fish wmcrtl xterm`
+* `sudo apt-get install fish wmctrl xterm`
 
 Usage
 -----
