@@ -55,4 +55,7 @@ function translate
   translate-yandex.sh "$argv"
 end
 
-alias xkcd='curl -s (lynx --dump https://c.xkcd.com/random/comic/ | grep png | string trim) -o /tmp/xkcd; convert -negate -brightness-contrast 20  /tmp/xkcd /tmp/xkcd; kitty +kitten icat /tmp/xkcd'
+alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s -o /tmp/xkcd; convert -negate -brightness-contrast 20 /tmp/xkcd /tmp/xkcd; kitty +kitten icat /tmp/xkcd'
+
+# Show hi-res album art of currently playing song in Spotify
+alias albumart='sp metadata | grep -Po "(?<=url\|).*" | xargs curl -s | grep -Po "https:[^\"]*" | grep "i.scdn.co/image/" | head -1 | xargs curl -s -o /tmp/albumart; kitty +kitten icat /tmp/albumart'
