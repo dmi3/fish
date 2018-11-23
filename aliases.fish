@@ -31,6 +31,12 @@ alias ...='cd ../..'
 # Free space on physical drives
 alias fs='df -x squashfs -x tmpfs -x devtmpfs'
 
+# Lists disks
+alias disks='lsblk -o NAME,LABEL,SIZE,RM,MODEL,PARTLABEL,TYPE | grep disk'
+
+# List partitions
+alias partitions='lsblk -o NAME,LABEL,SIZE,MOUNTPOINT,RM,MODEL,PARTLABEL,TYPE | grep -v loop'
+
 # Size of file or directory
 alias sizeof="du -hs"
 
