@@ -32,10 +32,10 @@ alias ...='cd ../..'
 alias fs='df -x squashfs -x tmpfs -x devtmpfs'
 
 # Lists disks
-alias disks='lsblk -o RM,NAME,LABEL,SIZE,MODEL,PARTLABEL,TYPE | awk "NR == 1 || /disk/"'
+alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
 
 # List partitions
-alias partitions='lsblk -o RM,NAME,LABEL,SIZE,MOUNTPOINT,MODEL,PARTLABEL,TYPE | grep -v loop'
+alias partitions='lsblk -o HOTPLUG,NAME,LABEL,MOUNTPOINT,SIZE,MODEL,PARTLABEL,TYPE | grep -v loop'
 
 # Size of file or directory
 alias sizeof="du -hs"
