@@ -32,16 +32,19 @@ alias ...='cd ../..'
 alias fs='df -x squashfs -x tmpfs -x devtmpfs'
 
 # Lists disks
-alias disks='lsblk -o NAME,LABEL,SIZE,RM,MODEL,PARTLABEL,TYPE | grep disk'
+alias disks='lsblk -o RM,NAME,LABEL,SIZE,MODEL,PARTLABEL,TYPE | awk "NR == 1 || /disk/"'
 
 # List partitions
-alias partitions='lsblk -o NAME,LABEL,SIZE,MOUNTPOINT,RM,MODEL,PARTLABEL,TYPE | grep -v loop'
+alias partitions='lsblk -o RM,NAME,LABEL,SIZE,MOUNTPOINT,MODEL,PARTLABEL,TYPE | grep -v loop'
 
 # Size of file or directory
 alias sizeof="du -hs"
 
 # Connect to wifi
 alias connect=nmtui
+
+# Prevent locking untill next reboot
+alias lockblock='killall xautolock; xset s off; xset -dpms; echo ok'
 
 function ll --description "Scroll ll if theres more files that fit on screen"
   ls -l $argv --color=always | less -R -X -F
