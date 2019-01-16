@@ -29,7 +29,7 @@ alias xs='cd'
 alias ...='cd ../..'
 
 # Free space on physical drives
-alias fs='df -x squashfs -x tmpfs -x devtmpfs'
+alias fs='df -h -x squashfs -x tmpfs -x devtmpfs'
 
 # Lists disks
 alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
@@ -137,9 +137,9 @@ else
   alias cal="ncal -bM3"
 end
 
-# If [sssh](https://github.com/dmi3/bin/blob/master/sssh) installed - use it instead of ssh
-if type -q sssh
-  alias ssh=sssh
+# If [sssh2](https://github.com/dmi3/bin/blob/master/sssh2) installed - use it instead of ssh
+if type -q sssh2
+  alias ssh=sssh2
 end
 
 # Show images in [kitty](https://sw.kovidgoyal.net/kitty/)

@@ -55,6 +55,10 @@ function translate
   translate-yandex.sh "$argv"
 end
 
+function syn --description "Synonym"
+  curl http://words.bighugelabs.com/api/2/(cat ~/git/stuff/keys/bighugelabs)/$argv/
+end
+
 alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s -o /tmp/xkcd; convert -negate -brightness-contrast 20 /tmp/xkcd /tmp/xkcd; kitty +kitten icat /tmp/xkcd'
 
 # Show hi-res album art of currently playing song in Spotify

@@ -99,6 +99,10 @@ function save_dir --on-event fish_postexec --description "If command was execute
     set -g last_pwd "$PWD"
 end
 
+function merge_history --on-event fish_postexec 
+  history merge
+end
+
 # Fzf stuff 
 # https://github.com/junegunn/fzf
 # https://github.com/junegunn/fzf/blob/master/man/man1/fzf.1
