@@ -99,10 +99,6 @@ function save_dir --on-event fish_postexec --description "If command was execute
     set -g last_pwd "$PWD"
 end
 
-function merge_history --on-event fish_postexec 
-  history merge
-end
-
 # Fzf stuff 
 # https://github.com/junegunn/fzf
 # https://github.com/junegunn/fzf/blob/master/man/man1/fzf.1
@@ -110,7 +106,7 @@ end
 set -x FZF_DEFAULT_OPTS --prompt="⌕ "
 
 function fzf-history-widget
-    history | fzf -q (commandline) -e +m --tiebreak=index --sort \
+    history merge; history | fzf -q (commandline) -e +m --tiebreak=index --sort \
       --preview-window 'up:50%:wrap:hidden' \
       --preview 'echo {}' \
       --bind "left:execute(echo \" commandline {}\")+cancel+cancel" \
