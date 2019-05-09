@@ -46,6 +46,9 @@ alias connect=nmtui
 # Prevent locking untill next reboot
 alias lockblock='killall xautolock; xset s off; xset -dpms; echo ok'
 
+# Save file with provided name
+alias wget='wget --content-disposition'
+
 function ll --description "Scroll ll if theres more files that fit on screen"
   ls -l $argv --color=always | less -R -X -F
 end

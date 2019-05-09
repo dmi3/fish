@@ -159,7 +159,6 @@ function scd
     and cd $result
     and commandline -f repaint
     and ls
-    or fzf-history-widget   
 end
 
 function update-fzf --description "Installs or updates fzf"
