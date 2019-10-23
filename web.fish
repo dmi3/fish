@@ -59,7 +59,19 @@ function syn --description "Synonym"
   curl http://words.bighugelabs.com/api/2/(cat ~/git/stuff/keys/bighugelabs)/$argv/
 end
 
-alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s -o /tmp/xkcd; convert -negate -brightness-contrast 20 /tmp/xkcd /tmp/xkcd; kitty +kitten icat /tmp/xkcd'
+function waitweb --argument-names 'url' --description 'Wait until web resource is available'
+  set -q url || set url 'google.com'
+  printf "Waithing for the $url"
+  while not curl --output /dev/null --silent --head --fail "$url"
+    printf '.'
+    sleep 10
+  end
+  printf "\n$url is online!"
+  notify-send -u critical "$url is online!"
+end
+
+alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s | convert -negate -fuzz 10% -transparent black png: png:- | kitty +kitten icat'
 
 # Show hi-res album art of currently playing song in Spotify
-alias albumart='sp metadata | grep -Po "(?<=url\|).*" | xargs curl -s | grep -Po "https:[^\"]*" | grep "i.scdn.co/image/" | head -1 | xargs curl -s -o /tmp/albumart; kitty +kitten icat /tmp/albumart'
+# Requires [sp](https://gist.github.com/wandernauta/6800547)
+alias albumart='sp metadata | grep -Po "(?<=url\|).*" | xargs curl -s | grep -Po "https:[^\"]*" | grep "i.scdn.co/image/" | head -1 | xargs curl -s | kitty +kitten icat'

@@ -171,3 +171,9 @@ end
 function freq --description "Line frequency in piped input"
   cat 1>| sort -f | uniq -c | sort -k 1nr -k 2f
 end
+
+# Ignore history
+
+abbr --add ls ' ls'
+abbr --add ll ' ll'
+abbr --add cd ' cd' # directory history is handled by Ctrl+E

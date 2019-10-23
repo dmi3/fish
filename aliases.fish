@@ -58,10 +58,6 @@ function mkcd --description "Create and cd to directory"
   and cd $argv
 end
 
-function open --description "Open file in new process"
-   env XDG_CURRENT_DESKTOP=X-Generic xdg-open $argv & 
-end
-
 function amount --description "Mount archive"
   /usr/lib/gvfs/gvfsd-archive file=$argv 2>/dev/null &
   sleep 1
@@ -119,6 +115,14 @@ function run --description "Make file executable, then run it"
   eval "./$argv"
 end
 
+function launch --description "Launch program"
+  eval "$argv >/dev/null 2>&1 &" & disown
+end
+
+function open --description "Open file in new process"
+  env XDG_CURRENT_DESKTOP=X-Generic xdg-open $argv & disown
+end
+
 function b --description "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
   bash -c "$argv"
 end
@@ -160,4 +164,12 @@ function subl --description "Starts Sublime Text. Additionally supports piping (
   else
     /opt/sublime_text/sublime_text "$argv"
   end
+end
+
+function qr --description "Prints QR"
+  if [ "$argv" = "" ]
+    qrencode --background=00000000 --foreground=FFFFFF -o - | kitty +kitten icat
+  else
+    printf "$argv" | qrencode --background=00000000 --foreground=FFFFFF -o - | kitty +kitten icat
+  end    
 end
