@@ -46,3 +46,5 @@ function td --description "Add to ~/todo.md list"
 end
 
 alias copy-patch='echo (cd ~/safe/patches; ls -t | head -10 | fzf | xargs cat | xclip -sel clip)'
+
+alias server-here='python -m SimpleHTTPServer 8080'

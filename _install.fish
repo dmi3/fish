@@ -12,8 +12,10 @@
 #
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
+set -q XDG_CONFIG_HOME || set XDG_CONFIG_HOME "$HOME/.config"
+
 read -P "⚠ Warning this will remove $XDG_CONFIG_HOME/fish! Backup before running"
-rm -rf "$XDG_CONFIG_HOME/fish"; or true
+rm -rf "$XDG_CONFIG_HOME/fish"
 ln -s (pwd) "$XDG_CONFIG_HOME/fish"
 
 echo -e "#!/bin/sh\necho \# Fish Shell Goodies > README.md\ngenerate-readme.fish >> README.md" > .git/hooks/pre-commit

@@ -62,6 +62,7 @@ function fish_user_key_bindings
 end
 
 function fish_title
+  set -q SSH_CLIENT || set -q SSH_TTY && echo -n "🖧$USER@"(hostname)" "
   if [ "$_" != "fish" ]; echo "➤ $_ "; end
   echo 🖿 (basename (pwd))
 end

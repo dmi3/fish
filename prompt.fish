@@ -4,6 +4,12 @@
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 function fish_prompt
+    if set -q SSH_CLIENT || set -q SSH_TTY
+        set_color 909d63 --bold;
+        set __ssh true
+        echo -n "[$USER@"(hostname)"]"
+    end
+
     set_color 777 --bold
 
     set __git_status (git status ^/dev/null | head -1)
@@ -36,6 +42,6 @@ function fish_prompt
         # end
     end
 
-    echo
-    echo (set_color 777)'➤ '
+    echo (set_color 777)
+    set -q __ssh && echo '🖧 ' || echo '➤ '
 end

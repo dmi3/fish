@@ -81,6 +81,7 @@ end
 
 function copypath --description "Copy full file path"
   readlink -e $argv | xclip -sel clip
+  echo "copied to clipboard"
 end
 
 function color --description "Print color"

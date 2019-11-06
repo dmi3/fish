@@ -70,7 +70,7 @@ function waitweb --argument-names 'url' --description 'Wait until web resource i
   notify-send -u critical "$url is online!"
 end
 
-alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s | convert -negate -fuzz 10% -transparent black png: png:- | kitty +kitten icat'
+alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s | convert  -resize 300 -negate -fuzz 10% -transparent black png: png:- | kitty +kitten icat'
 
 # Show hi-res album art of currently playing song in Spotify
 # Requires [sp](https://gist.github.com/wandernauta/6800547)
