@@ -24,7 +24,7 @@
 # https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish
 # fish_key_reader
 function fish_user_key_bindings
-	  # Clear input on Ctrl+U
+      # Clear input on Ctrl+U
     bind \cu 'commandline "";'
     
     if type -q fzf # Use fzf if installed
@@ -56,6 +56,11 @@ function fish_user_key_bindings
     bind \e\[1\;7B "prevd; echo; commandline -f repaint;"
 
     math (echo $version | tr -d .)"<231" > /dev/null; and echo "⚠ Please upgrade Fish shell to at least 2.3.0 https://fishshell.com/#platform_tabs"
+
+    # Last command
+    bind ! bind_bang
+    # Last command argument
+    bind '$' bind_dollar
 
     # Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings).
     stty intr \^C
@@ -178,3 +183,22 @@ end
 abbr --add ls ' ls'
 abbr --add ll ' ll'
 abbr --add cd ' cd' # directory history is handled by Ctrl+E
+
+function bind_bang
+  switch (commandline -t)
+  case "!"
+    commandline -t $history[1]; commandline -f repaint
+  case "*"
+    commandline -i !
+  end
+end
+
+function bind_dollar
+  switch (commandline -t)
+  case "!"
+    commandline -t ""
+    commandline -f history-token-search-backward
+  case "*"
+    commandline -i '$'
+  end
+end
