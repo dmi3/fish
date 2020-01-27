@@ -35,7 +35,7 @@ alias fs='df -h -x squashfs -x tmpfs -x devtmpfs'
 alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
 
 # List partitions
-alias partitions='lsblk -o HOTPLUG,NAME,LABEL,MOUNTPOINT,SIZE,MODEL,PARTLABEL,TYPE | grep -v loop'
+alias partitions='lsblk -o HOTPLUG,NAME,LABEL,MOUNTPOINT,SIZE,MODEL,PARTLABEL,TYPE | grep -v loop | cut -c1-$COLUMNS'
 
 # Size of file or directory
 alias sizeof="du -hs"

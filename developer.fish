@@ -48,3 +48,16 @@ end
 alias copy-patch='echo (cd ~/safe/patches; ls -t | head -10 | fzf | xargs cat | xclip -sel clip)'
 
 alias server-here='python -m SimpleHTTPServer 8080'
+
+function sdkman --description "sdkman"
+  bash -c "source ~/.sdkman/bin/sdkman-init.sh; sdk $argv"
+  sdkman-init
+end
+
+function sdkman-init --description "Inits sdkman"
+  test -e ~/.sdkman/bin/sdkman-init.sh || begin echo "You need to install sdkman" && commandline -a "curl -s https://get.sdkman.io | bash" 2>/dev/null && return 1; end
+  set -gx PATH (bash -c "source ~/.sdkman/bin/sdkman-init.sh; echo \$PATH")
+end
+
+# Set `SDKMAN_AUTO_INIT=true` in `/etc/profile` for auto init
+set -q SDKMAN_AUTO_INIT && sdkman-init
