@@ -15,7 +15,21 @@ Instalation
 
 # [aliases.fish](https://github.com/dmi3/fish/blob/master/aliases.fish)
 
-Useful aliases
+## Useful aliases
+Create missing directories in path when calling `mkdir`
+Print full file path
+Remove directories, but ask nicely
+Copy directories, but ask nicely
+Add current directory to path
+Update `PATH` variable
+Human readable sizes for `df`, `du`, `free` (i.e. Mb, Gb etc)
+Free space on physical drives
+List disks
+List partitions
+Size of file or directory
+Connect to wifi
+Prevent locking untill next reboot
+`wget` to save file with provided name
 <hr/>
 
 # [colors.fish](https://github.com/dmi3/fish/blob/master/colors.fish)

@@ -115,12 +115,12 @@ function fzf-history-widget
     history merge; history | fzf -q (commandline) -e +m --tiebreak=index --sort \
       --preview-window 'up:50%:wrap:hidden' \
       --preview 'echo {}' \
-      --bind "left:execute(echo \" commandline {}\")+cancel+cancel" \
-      --bind "right:execute(echo \" commandline {}\")+cancel+cancel" \
-      --bind "del:execute(echo \" history delete {}\")+cancel+cancel" \
-      --bind "ctrl-x:execute(echo \" printf {} | xclip -sel clip\")+cancel+cancel" \
+      --bind "left:execute(printf ' commandline %q' {})+cancel+cancel" \
+      --bind "right:execute(printf ' commandline %q' {})+cancel+cancel" \
+      --bind "del:execute(printf ' history delete %q' {})+cancel+cancel" \
+      --bind "ctrl-x:execute(printf {} | xclip -sel clip)+cancel+cancel" \
       --bind "ctrl-a:toggle-preview" \
-      --bind "ctrl-e:execute(echo \" eval scd\")+cancel+cancel" \
+      --bind "ctrl-e:execute(echo ' eval scd')+cancel+cancel" \
       --header "[⏎] run; [←] edit; [del] delete; Ctrl+X copy; Ctrl+A show full" | read -l result
     and commandline $result
     and commandline -f repaint
@@ -183,6 +183,7 @@ end
 abbr --add ls ' ls'
 abbr --add ll ' ll'
 abbr --add cd ' cd' # directory history is handled by Ctrl+E
+
 
 function bind_bang
   switch (commandline -t)
