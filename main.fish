@@ -9,13 +9,7 @@
 #  * Ctrl+E to show recent directories
 #  * Ctrl+F searches by filename
 #  * Alt+Ctrl+F searches by file contents
-#  * Convinient navigation using `Alt+Ctrl` + `→` `←` `↑`
-#    - History back/forward/go to parent dir
-#    - You can use Fish as file manager!
-#    - Comes handy when you start typing command, then realize wrong dir
 #  * Prints error status in case of command failure
-#  * Prints directory and currently running command in tab title ↓
-#    - <img src="https://developer.run/pic/fish_title.png"/>
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 # https://fishshell.com/docs/current/
@@ -23,32 +17,29 @@
 # https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish
 # fish_key_reader
 function fish_user_key_bindings
-      # Clear input on Ctrl+U
+#  * Clear input on Ctrl+U
     bind \cu 'commandline "";'
     
     if type -q fzf # Use fzf if installed
-      # Simulate Ctrl+R in Bash      
       bind \cr fzf-history-widget
-
-      # Fuzzy recursive search files in current directory & append selection to current command
       bind \cf search
-      
-      # Most frequently visited directories on Ctrl+E
       bind \ce scd
-      
       bind \e\cf search-contents
     else # Use poor man completion (as up arrow, without search-as-you-type)
       echo "⚠ fzf is not installed. To greatly improve Ctrl+R, Ctrl+E, Ctrl+Alt+F and Ctrl+F type `update-fzf`"
       bind \cr history-search-backward
     end
 
-    # Exit on ESC if single command mode enabled
-    # See <https://github.com/dmi3/fish/blob/master/singlecmd.fish>
+#  * Exit on ESC if single command mode enabled
+#    - See <https://github.com/dmi3/fish/blob/master/singlecmd.fish>
     if [ "$SINGLE_COMMAND" = "true" ]
       bind \e 'exit 0'
     end
 
-    # Navigation with Alt+Ctrl ↑→←
+#  * Convinient navigation using `Alt+Ctrl` + `→` `←` `↑`
+#    - History back/forward/go to parent dir
+#    - You can use Fish as file manager!
+#    - Comes handy when you start typing command, then realize wrong dir
     bind \e\[1\;7D "prevd; echo; commandline -f repaint;"
     bind \e\[1\;7C "nextd; echo; commandline -f repaint;"
     bind \e\[1\;7A "cd ..; echo; commandline -f repaint;"
@@ -56,22 +47,22 @@ function fish_user_key_bindings
 
     math (echo $version | tr -d .)"<231" > /dev/null; and echo "⚠ Please upgrade Fish shell to at least 2.3.0 https://fishshell.com/#platform_tabs"
 
-    # Last command
     bind ! bind_bang
-    # Last command argument
     bind '$' bind_dollar
 
-    # Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings).
+#  * Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings).
     stty intr \^C
 end
 
-function fish_title
+#  * Prints directory and currently running command in tab title ↓
+#    - <img src="https://developer.run/pic/fish_title.png"/>
+function fish_title --description "Prints directory and currently running command in tab title"
   set -q SSH_CLIENT || set -q SSH_TTY && echo -n "🖧$USER@"(hostname)" "
   if [ "$_" != "fish" ]; echo "➤ $_ "; end
   echo 🖿 (basename (pwd))
 end
 
-function fish_greeting
+function fish_greeting --description "Prints `/var/run/motd.dynamic` as greeting. Use in combination with [headlines.sh](https://github.com/dmi3/bin/blob/master/headlines.sh) to see top news"
   if test -e /var/run/motd.dynamic -a "$SINGLE_COMMAND" != "true"
     set_color 4E9A06
     cat /var/run/motd.dynamic
@@ -110,6 +101,7 @@ end
 
 set -x FZF_DEFAULT_OPTS --prompt="⌕ "
 
+# # Simulate Ctrl+R in Bash
 function fzf-history-widget
     history merge; history | fzf -q (commandline) -e +m --tiebreak=index --sort \
       --preview-window 'up:50%:wrap:hidden' \
@@ -126,6 +118,7 @@ function fzf-history-widget
     and commandline -f execute
 end
 
+# Fuzzy recursive search files in current directory & append selection to current command
 function search --description "Search files by mask, case insensitive, output with full path"
   if [ $argv == ""]
     find $PWD 2>/dev/null | fzf -q "'" \
@@ -154,6 +147,7 @@ function search-contents --description "Search file contents"
   end
 end
 
+# Most frequently visited directories on Ctrl+E
 function scd
     cat ~/.local/share/fish/fish_dir_history | freq | fzf \
     -q "'" -e +m \

@@ -99,16 +99,20 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 * Ctrl+E to show recent directories
 * Ctrl+F searches by filename
 * Alt+Ctrl+F searches by file contents
+* Prints error status in case of command failure
+* Clear input on Ctrl+U
+* Exit on ESC if single command mode enabled
+  - See <https://github.com/dmi3/fish/blob/master/singlecmd.fish>
 * Convinient navigation using `Alt+Ctrl` + `→` `←` `↑`
   - History back/forward/go to parent dir
   - You can use Fish as file manager!
   - Comes handy when you start typing command, then realize wrong dir
-* Prints error status in case of command failure
+* Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings).
 * Prints directory and currently running command in tab title ↓
   - <img src="https://developer.run/pic/fish_title.png"/>
 * `fish_user_key_bindings
-* `fish_title
-* `fish_greeting
+* `fish_title` "Prints directory and currently running command in tab title"
+* `fish_greeting` "Prints `/var/run/motd.dynamic` as greeting. Use in combination with [headlines.sh](https://github.com/dmi3/bin/blob/master/headlines.sh) to see top news"
 * `show_exit_code` "Show exit code on command failure" --on-event fish_postexec
 * `save_dir` "If command was executed if directory, save dir to Ctrl+E history for quick access" --on-event fish_postexec
 * `fzf-history-widget
