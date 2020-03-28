@@ -11,7 +11,6 @@ Instalation
    - **All**: run `./_install.fish` ⚠ this will remove `~/.config/fish`! Backup before running
    - **Some**: [source](https://github.com/dmi3/bin/blob/master/config.fish) files you are interested in your `~/.config/fish/config.fish`
 3. Install [fzf](https://github.com/junegunn/fzf) or run `fish -c update-fzf`
-#  Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
 <hr/>
 
 # [aliases.fish](https://github.com/dmi3/fish/blob/master/aliases.fish)
@@ -82,8 +81,6 @@ Functions useful for developers
 * `git-pr` "Create PR on Github"
 * `gradle` "Use ./gradlew if exists"
 * `src` 'Open/edit source of script or function located in $PATH' --wraps which
-  switch (functions --details $argv)
-      gedit (functions --details $argv)
 * `td` "Add to ~/todo.md list"
 * `sdkman` "sdkman"
 * `sdkman-init` "Inits sdkman"
@@ -110,7 +107,6 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 * Prints directory and currently running command in tab title ↓
 
 <img src="https://developer.run/pic/fish_title.png"/>
-# https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish
 * `fish_user_key_bindings
 * `fish_title
 * `fish_greeting
@@ -122,16 +118,14 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 * `scd
 * `update-fzf` "Installs or updates fzf"
 * `freq` "Line frequency in piped input"
-* `bind_bang
-* `bind_dollar
+* `bind_bang` "Type `!!` to get last command"
+* `bind_dollar` "Type `!\$` to get last command argument"
 <hr/>
 
 # [prompt.fish](https://github.com/dmi3/fish/blob/master/prompt.fish)
 
 Two line propmt with full path and Git integration that scales nicely.
 <img src="https://developer.run/pic/fish_prompt.gif">
-     #     set_color F92672
-     #     echo -n " ⬆$__git_unpushed_commits "
 * `fish_prompt
 <hr/>
 
@@ -187,5 +181,5 @@ Calls to various CLI friendly web services
 * `translate
 * `syn` "Synonym"
 * `emoji` "Search emoji"
-* `waitweb --argument-names 'url'` 'Wait until web resource is available'
+* `waitweb` 'Wait until web resource is available' --argument-names 'url'
 <hr/>

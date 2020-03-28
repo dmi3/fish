@@ -185,7 +185,7 @@ abbr --add ll ' ll'
 abbr --add cd ' cd' # directory history is handled by Ctrl+E
 
 
-function bind_bang
+function bind_bang --description "Type `!!` to get last command"
   switch (commandline -t)
   case "!"
     commandline -t $history[1]; commandline -f repaint
@@ -194,7 +194,7 @@ function bind_bang
   end
 end
 
-function bind_dollar
+function bind_dollar --description "Type `!\$` to get last command argument"
   switch (commandline -t)
   case "!"
     commandline -t ""

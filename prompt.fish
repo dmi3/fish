@@ -34,12 +34,6 @@ function fish_prompt
         # Need git 2.17.0+
         set_color F92672
         git status -sb --no-column --porcelain | grep -oe "ahead [0-9]*, behind [0-9]*" | string replace "ahead " " ⬆" | string replace ", behind " " ⬇" | xargs echo -n ""; or true
-        
-        # set __git_unpushed_commits (git cherry -v ^/dev/null | wc -l; or echo "0")
-        # if [ $__git_unpushed_commits !=  "0" ]
-        #     set_color F92672
-        #     echo -n " ⬆$__git_unpushed_commits "
-        # end
     end
 
     echo (set_color 777)
