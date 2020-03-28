@@ -25,9 +25,10 @@ tradermail.info
 mailinater.com
 suremail.info
 reconmail.com" | shuf -n1)
-  set email (curl -s www.pseudorandom.name | string replace ' ' '')@$domain
+  set name (curl -s www.pseudorandom.name | string replace ' ' '')
+  set email $name@$domain
   printf "$email" | tee /dev/tty | xclip -sel clip
-  echo -e "\ncopied to clipboard\nhttps://www.mailinator.com/inbox2.jsp?public_to=$email"
+  echo -e "\ncopied to clipboard\nhttps://www.mailinator.com/v3/index.jsp?zone=public&query=$name#/#inboxpane"
 end 
 
 function random-password --description "Generate random password" --argument-names 'length'

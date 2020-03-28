@@ -39,22 +39,6 @@ Instalation
   - Use [nicl](https://github.com/dmi3/nicl) in installed
 * If [sssh2](https://github.com/dmi3/bin/blob/master/sssh2) installed - use it instead of ssh
 * Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
-* `ll` "Scroll ll if theres more files that fit on screen"
-* `mkcd` "Create and cd to directory"
-* `amount` "Mount archive"
-* `aumount` "Unmount all mounted archive (and gvfs locations)"
-* `copy` "Copy pipe or argument"
-* `copypath` "Copy full file path"
-* `color` "Print color"
-* `reset_windows`  "Reset all windows size and bring it to main monitor. Useful if DE messes up in multiple monitor configuration"
-* `nano
-* `run` "Make file executable, then run it"
-* `launch` "Launch program"
-* `open` "Open file in new process"
-* `b` "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
-* `c` "Math using Python"
-* `subl` "Starts Sublime Text. Additionally supports piping (i.e. `ls | subl`) and urls (i.e. `subl http://jenkins/logs`)"
-* `qr` "Prints QR"
 <hr/>
 
 # [colors.fish](https://github.com/dmi3/fish/blob/master/colors.fish)
@@ -81,14 +65,6 @@ Entry point that includes all other configs
 # [developer.fish](https://github.com/dmi3/fish/blob/master/developer.fish)
 
 Functions useful for developers  
-* `git-revert-file` "Revert single file in git"
-* `git-wat` "Show 5 latest commits"
-* `git-pr` "Create PR on Github"
-* `gradle` "Use ./gradlew if exists"
-* `src` 'Open/edit source of script or function located in $PATH' --wraps which
-* `td` "Add to ~/todo.md list"
-* `sdkman` "sdkman"
-* `sdkman-init` "Inits sdkman"
 <hr/>
 
 # [main.fish](https://github.com/dmi3/fish/blob/master/main.fish)
@@ -112,25 +88,11 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
   - Delete history entry (very useful for no longer actual commands)
   - <img src="https://developer.run/pic/fish_history.png"/>
 * Ignore `ls`, `ll`, and `cd` history. `Ctrl+E` is better way to access previosly visited directories
-* `fish_user_key_bindings` "Key bindings. Go to functions definition for description. Use `fish_key_reader`. [Docs](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish)"
-* `fish_title` "Prints directory and currently running command in tab title. `user@host` in prompt when connected via ssh."
-* `fish_greeting` "Prints `/var/run/motd.dynamic` as greeting. Use in combination with [headlines.sh](https://github.com/dmi3/bin/blob/master/headlines.sh) to see top news"
-* `show_exit_code` "Show exit code on command failure" --on-event fish_postexec
-* `save_dir` "If command was executed if directory, save dir to Ctrl+E history for quick access." --on-event fish_postexec
-* `fzf-history-widget` "Ctrl+R for history"
-* `search` "`CTRL`+`F` Fuzzy recursive search files by name in current directory & append selection to current command"
-* `search-contents` "`ALT`+`CTRL`+`F` search (fuzzy) file by contents"
-* `scd` "`Ctrl`+`E` to access most frequently visited directories."
-* `update-fzf` "Installs or updates fzf"
-* `freq` "Line frequency in piped input. See <https://gist.github.com/rsvp/1859875>"
-* `bind_bang` "Type `!!` to get last command"
-* `bind_dollar` "Type `!\$` to get last command argument"
 <hr/>
 
 # [prompt.fish](https://github.com/dmi3/fish/blob/master/prompt.fish)
 
 <img src="https://developer.run/pic/fish_prompt.gif">
-* `fish_prompt` "Two line prompt with full path and Git integration that scales nicely"
 <hr/>
 
 # [singlecmd.fish](https://github.com/dmi3/fish/blob/master/singlecmd.fish)
@@ -180,15 +142,4 @@ Calls to various CLI friendly web services
 * Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
 * Show hi-res album art of currently playing song in Spotify
   - Requires [sp](https://gist.github.com/wandernauta/6800547)
-* `random-name` "Random name for registration on random websites. How about Helen Lovick? Roger Rice?"
-* `random-alias` "Docker-like alias generator: `thirsty_mahavira`, `boring_heisenberg`. Don't know how to name file/project/branch/file? Use this!"
-* `random-email` "Random email for registration on random websites. Generate random email in one of Mailinator subdomains and provide link to check it. Useful when <http://bugmenot.com/> is not available."
-* `random-password` "Generate random password" --argument-names 'length'
-* `weather` "Show weather"
-* `xsh` "Prepend this to command to explain its syntax i.e. `xsh iptables -vnL --line-numbers`"
-* `transfer` "Upload file to transfer.sh"
-* `translate` "Translate word using [Yandex](https://github.com/dmi3/bin/blob/master/yandex-translate.sh)"
-* `syn` "Find synonyms for word"
-* `emoji` "Search emoji by name"
-* `waitweb` 'Wait until web resource is available. Useful when you are waiting for internet to get back, or Spring to start' --argument-names 'url'
 <hr/>
