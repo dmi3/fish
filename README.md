@@ -109,8 +109,8 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 * `fish_user_key_bindings
 * `fish_title
 * `fish_greeting
-* `show_exit_code --on-event fish_postexec` "Show exit code on command failure"
-* `save_dir --on-event fish_postexec` "If command was executed if directory, save dir to Ctrl+E history for quick access"
+* `show_exit_code` "Show exit code on command failure" --on-event fish_postexec
+* `save_dir` "If command was executed if directory, save dir to Ctrl+E history for quick access" --on-event fish_postexec
 * `fzf-history-widget
 * `search` "Search files by mask, case insensitive, output with full path"
 * `search-contents` "Search file contents"
@@ -123,9 +123,8 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 
 # [prompt.fish](https://github.com/dmi3/fish/blob/master/prompt.fish)
 
-Two line propmt with full path and Git integration that scales nicely.
 <img src="https://developer.run/pic/fish_prompt.gif">
-* `fish_prompt
+* `fish_prompt` "Two line prompt with full path and Git integration that scales nicely"
 <hr/>
 
 # [singlecmd.fish](https://github.com/dmi3/fish/blob/master/singlecmd.fish)

@@ -78,7 +78,7 @@ function fish_greeting
   end
 end
 
-function show_exit_code --on-event fish_postexec --description "Show exit code on command failure"
+function show_exit_code --description "Show exit code on command failure" --on-event fish_postexec
     set -l last_status $status
     if [ $last_status -ne 0 -a $argv != "" ]
       echo (set_color F92672)"✖ $last_status"
@@ -96,7 +96,7 @@ function show_exit_code --on-event fish_postexec --description "Show exit code o
     end  
 end
 
-function save_dir --on-event fish_postexec --description "If command was executed if directory, save dir to Ctrl+E history for quick access"
+function save_dir --description "If command was executed if directory, save dir to Ctrl+E history for quick access" --on-event fish_postexec
     test "$last_pwd"!="$PWD"; 
       and string match -q -r "(^\$|ls|cd|pwd|ll|echo|man)" $argv;
       or echo "$PWD" >> ~/.local/share/fish/fish_dir_history
