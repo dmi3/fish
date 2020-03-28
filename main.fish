@@ -17,6 +17,7 @@
 #  * Prints directory and currently running command in tab title ↓
 #  
 #  <img src="https://developer.run/pic/fish_title.png"/>
+#
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 # https://fishshell.com/docs/current/
