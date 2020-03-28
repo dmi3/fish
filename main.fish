@@ -1,7 +1,6 @@
 #  Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://github.com/junegunn/fzf)
 #
 #  * See [Official Fish documentation](https://fishshell.com/docs/current/)
-#  * Works nice with my [Kitty shell config](https://github.com/dmi3/bin/blob/master/config/kitty/kitty.conf) and [useful script collection](https://github.com/dmi3/bin)
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 function fish_user_key_bindings --description "Key bindings. Go to functions definition for description. Use `fish_key_reader`. [Docs](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish)"
@@ -44,7 +43,7 @@ end
 
 #  * Prints directory and currently running command in tab title ↓
 #    - <img src="https://developer.run/pic/fish_title.png"/>
-function fish_title --description "Prints directory and currently running command in tab title"
+function fish_title --description "Prints directory and currently running command in tab title. `user@host` in prompt when connected via ssh."
   set -q SSH_CLIENT || set -q SSH_TTY && echo -n "🖧$USER@"(hostname)" "
   if [ "$_" != "fish" ]; echo "➤ $_ "; end
   echo 🖿 (basename (pwd))

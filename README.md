@@ -3,13 +3,18 @@
 # [_install.fish](https://github.com/dmi3/fish/blob/master/_install.fish)
 
 Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
+* Lots of functions/ideas are easily portable to Bash/Zsh/your preffered shell
+*  - Feel free to explore!
+* This readme [automatically generated](https://github.com/dmi3/bin/blob/master/generate-readme.fish) from comments in scripts
+   - Please [notify me](https://github.com/dmi3/fish/issues/new/) if you notice any errors
+* Works nice with my [Kitty shell config](https://github.com/dmi3/bin/blob/master/config/kitty/kitty.conf) and [useful script collection](https://github.com/dmi3/bin)
 
 Instalation
 ----------
 1. `git clone git@github.com:dmi3/fish.git`
 2. Install configs:
    - **All**: run `./_install.fish` ⚠ this will remove `~/.config/fish`! Backup before running
-   - **Some**: [source](https://github.com/dmi3/bin/blob/master/config.fish) files you are interested in your `~/.config/fish/config.fish`
+   - **Some**: [source](config.fish) files you are interested in your `~/.config/fish/config.fish`
 3. Install [fzf](https://github.com/junegunn/fzf) or run `fish -c update-fzf`
 <hr/>
 
@@ -90,7 +95,6 @@ Functions useful for developers
 
 Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://github.com/junegunn/fzf)
 * See [Official Fish documentation](https://fishshell.com/docs/current/)
-* Works nice with my [Kitty shell config](https://github.com/dmi3/bin/blob/master/config/kitty/kitty.conf) and [useful script collection](https://github.com/dmi3/bin)
 * Clear input on `Ctrl`+`U`
 * Exit on `Esc` if single command mode enabled
   - See <https://github.com/dmi3/fish/blob/master/singlecmd.fish>
@@ -109,7 +113,7 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
   - <img src="https://developer.run/pic/fish_history.png"/>
 * Ignore `ls`, `ll`, and `cd` history. `Ctrl+E` is better way to access previosly visited directories
 * `fish_user_key_bindings` "Key bindings. Go to functions definition for description. Use `fish_key_reader`. [Docs](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish)"
-* `fish_title` "Prints directory and currently running command in tab title"
+* `fish_title` "Prints directory and currently running command in tab title. `user@host` in prompt when connected via ssh."
 * `fish_greeting` "Prints `/var/run/motd.dynamic` as greeting. Use in combination with [headlines.sh](https://github.com/dmi3/bin/blob/master/headlines.sh) to see top news"
 * `show_exit_code` "Show exit code on command failure" --on-event fish_postexec
 * `save_dir` "If command was executed if directory, save dir to Ctrl+E history for quick access." --on-event fish_postexec
@@ -171,15 +175,20 @@ Usage
 
 Calls to various CLI friendly web services
 
-* `random-name
-* `random-alias
-* `random-email` "Copy random email in one of Mailinator subdomains and provide link to check it"
+* `myip` Shows external ip
+* `whereami` is like whoami but shows your external ip and geolocation
+* Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
+* Show hi-res album art of currently playing song in Spotify
+  - Requires [sp](https://gist.github.com/wandernauta/6800547)
+* `random-name` "Random name for registration on random websites. How about Helen Lovick? Roger Rice?"
+* `random-alias` "Docker-like alias generator: `thirsty_mahavira`, `boring_heisenberg`. Don't know how to name file/project/branch/file? Use this!"
+* `random-email` "Random email for registration on random websites. Generate random email in one of Mailinator subdomains and provide link to check it. Useful when <http://bugmenot.com/> is not available."
 * `random-password` "Generate random password" --argument-names 'length'
 * `weather` "Show weather"
 * `xsh` "Prepend this to command to explain its syntax i.e. `xsh iptables -vnL --line-numbers`"
 * `transfer` "Upload file to transfer.sh"
-* `translate
-* `syn` "Synonym"
-* `emoji` "Search emoji"
-* `waitweb` 'Wait until web resource is available' --argument-names 'url'
+* `translate` "Translate word using [Yandex](https://github.com/dmi3/bin/blob/master/yandex-translate.sh)"
+* `syn` "Find synonyms for word"
+* `emoji` "Search emoji by name"
+* `waitweb` 'Wait until web resource is available. Useful when you are waiting for internet to get back, or Spring to start' --argument-names 'url'
 <hr/>

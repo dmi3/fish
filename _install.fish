@@ -1,13 +1,18 @@
 #!/usr/bin/fish
 
 #  Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
+#  * Lots of functions/ideas are easily portable to Bash/Zsh/your preffered shell
+#  *  - Feel free to explore!
+#  * This readme [automatically generated](https://github.com/dmi3/bin/blob/master/generate-readme.fish) from comments in scripts
+#     - Please [notify me](https://github.com/dmi3/fish/issues/new/) if you notice any errors
+#  * Works nice with my [Kitty shell config](https://github.com/dmi3/bin/blob/master/config/kitty/kitty.conf) and [useful script collection](https://github.com/dmi3/bin)
 
 #  Instalation
 #  ----------
 #  1. `git clone git@github.com:dmi3/fish.git`
 #  2. Install configs:
 #     - **All**: run `./_install.fish` ⚠ this will remove `~/.config/fish`! Backup before running
-#     - **Some**: [source](https://github.com/dmi3/bin/blob/master/config.fish) files you are interested in your `~/.config/fish/config.fish`
+#     - **Some**: [source](config.fish) files you are interested in your `~/.config/fish/config.fish`
 #  3. Install [fzf](https://github.com/junegunn/fzf) or run `fish -c update-fzf`
 #
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
