@@ -1,22 +1,10 @@
 #  Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://github.com/junegunn/fzf)
-#  
-#  * Ctrl+R show fzf (fuzzy) history search where you can:
-#    - Execute previos command
-#    - Edit command before execution
-#    - Delete history entry (very useful for no longer actual commands)
-#  <img src="https://developer.run/pic/fish_history.png"/>
-#  
-#  * Ctrl+E to show recent directories
-#  * Ctrl+F searches by filename
-#  * Alt+Ctrl+F searches by file contents
-#  * Prints error status in case of command failure
+#
+#  * See [Official Fist documentation](https://fishshell.com/docs/current/)
+#  * Works nice with my [Kitty shell config](https://github.com/dmi3/bin/blob/master/config/kitty/kitty.conf) and [useful script collection](https://github.com/dmi3/bin)
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
-# https://fishshell.com/docs/current/
-
-# https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish
-# fish_key_reader
-function fish_user_key_bindings
+function fish_user_key_bindings --description "Key bindings. Go to functions definition for description. Use `fish_key_reader`. [Docs](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish)"
 #  * Clear input on Ctrl+U
     bind \cu 'commandline "";'
     
@@ -50,7 +38,7 @@ function fish_user_key_bindings
     bind ! bind_bang
     bind '$' bind_dollar
 
-#  * Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings).
+#  * Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings). See <https://developer.run/36>
     stty intr \^C
 end
 
@@ -87,7 +75,7 @@ function show_exit_code --description "Show exit code on command failure" --on-e
     end  
 end
 
-function save_dir --description "If command was executed if directory, save dir to Ctrl+E history for quick access" --on-event fish_postexec
+function save_dir --description "If command was executed if directory, save dir to Ctrl+E history for quick access." --on-event fish_postexec
     test "$last_pwd"!="$PWD"; 
       and string match -q -r "(^\$|ls|cd|pwd|ll|echo|man)" $argv;
       or echo "$PWD" >> ~/.local/share/fish/fish_dir_history
@@ -101,8 +89,13 @@ end
 
 set -x FZF_DEFAULT_OPTS --prompt="⌕ "
 
-# # Simulate Ctrl+R in Bash
-function fzf-history-widget
+#  * Ctrl+R show fzf (fuzzy) history search where you can:
+#    - Super advanched analog or `Ctrl+R` in Bash
+#    - Execute previos command
+#    - Edit command before execution
+#    - Delete history entry (very useful for no longer actual commands)
+#  <img src="https://developer.run/pic/fish_history.png"/>
+function fzf-history-widget --description "Ctrl+R for history"
     history merge; history | fzf -q (commandline) -e +m --tiebreak=index --sort \
       --preview-window 'up:50%:wrap:hidden' \
       --preview 'echo {}' \
@@ -118,8 +111,7 @@ function fzf-history-widget
     and commandline -f execute
 end
 
-# Fuzzy recursive search files in current directory & append selection to current command
-function search --description "Search files by mask, case insensitive, output with full path"
+function search --description "`CTRL`+`F` Fuzzy recursive search files by name in current directory & append selection to current command"
   if [ $argv == ""]
     find $PWD 2>/dev/null | fzf -q "'" \
       --bind "ctrl-f:execute(echo -e \" search-contents\n\")+cancel+cancel" | read -l result; and commandline -a $result
@@ -128,7 +120,7 @@ function search --description "Search files by mask, case insensitive, output wi
   end    
 end
 
-function search-contents --description "Search file contents"
+function search-contents --description "`ALT`+`CTRL`+`F` search (fuzzy) file by contents"
   if type -q ag
     ag --nobreak --no-numbers --noheading --max-count 100000 . 2>/dev/null \
         | fzf \
@@ -147,8 +139,7 @@ function search-contents --description "Search file contents"
   end
 end
 
-# Most frequently visited directories on Ctrl+E
-function scd
+function scd --description "`Ctrl`+`E` to access most frequently visited directories."
     cat ~/.local/share/fish/fish_dir_history | freq | fzf \
     -q "'" -e +m \
     --tiebreak=index \
@@ -166,17 +157,14 @@ function update-fzf --description "Installs or updates fzf"
   sudo -p "Root password to install fzf: " mv /tmp/fzf /usr/local/bin/fzf
 end
 
-# https://gist.github.com/rsvp/1859875
-function freq --description "Line frequency in piped input"
+function freq --description "Line frequency in piped input. See <https://gist.github.com/rsvp/1859875>"
   cat 1>| sort -f | uniq -c | sort -k 1nr -k 2f
 end
 
-# Ignore history
-
+#  * Ignore `ls`, `ll`, and `cd` history. `Ctrl+E` is better way to access previosly visited directories
 abbr --add ls ' ls'
 abbr --add ll ' ll'
-abbr --add cd ' cd' # directory history is handled by Ctrl+E
-
+abbr --add cd ' cd'
 
 function bind_bang --description "Type `!!` to get last command"
   switch (commandline -t)

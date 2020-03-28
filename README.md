@@ -89,17 +89,8 @@ Functions useful for developers
 # [main.fish](https://github.com/dmi3/fish/blob/master/main.fish)
 
 Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://github.com/junegunn/fzf)
-
-* Ctrl+R show fzf (fuzzy) history search where you can:
-  - Execute previos command
-  - Edit command before execution
-  - Delete history entry (very useful for no longer actual commands)
-<img src="https://developer.run/pic/fish_history.png"/>
-
-* Ctrl+E to show recent directories
-* Ctrl+F searches by filename
-* Alt+Ctrl+F searches by file contents
-* Prints error status in case of command failure
+* See [Official Fist documentation](https://fishshell.com/docs/current/)
+* Works nice with my [Kitty shell config](https://github.com/dmi3/bin/blob/master/config/kitty/kitty.conf) and [useful script collection](https://github.com/dmi3/bin)
 * Clear input on Ctrl+U
 * Exit on ESC if single command mode enabled
   - See <https://github.com/dmi3/fish/blob/master/singlecmd.fish>
@@ -107,20 +98,27 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
   - History back/forward/go to parent dir
   - You can use Fish as file manager!
   - Comes handy when you start typing command, then realize wrong dir
-* Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings).
+* Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings). See <https://developer.run/36>
 * Prints directory and currently running command in tab title ↓
   - <img src="https://developer.run/pic/fish_title.png"/>
-* `fish_user_key_bindings
+* Ctrl+R show fzf (fuzzy) history search where you can:
+  - Super advanched analog or `Ctrl+R` in Bash
+  - Execute previos command
+  - Edit command before execution
+  - Delete history entry (very useful for no longer actual commands)
+<img src="https://developer.run/pic/fish_history.png"/>
+* Ignore `ls`, `ll`, and `cd` history. `Ctrl+E` is better way to access previosly visited directories
+* `fish_user_key_bindings` "Key bindings. Go to functions definition for description. Use `fish_key_reader`. [Docs](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish)"
 * `fish_title` "Prints directory and currently running command in tab title"
 * `fish_greeting` "Prints `/var/run/motd.dynamic` as greeting. Use in combination with [headlines.sh](https://github.com/dmi3/bin/blob/master/headlines.sh) to see top news"
 * `show_exit_code` "Show exit code on command failure" --on-event fish_postexec
-* `save_dir` "If command was executed if directory, save dir to Ctrl+E history for quick access" --on-event fish_postexec
-* `fzf-history-widget
-* `search` "Search files by mask, case insensitive, output with full path"
-* `search-contents` "Search file contents"
-* `scd
+* `save_dir` "If command was executed if directory, save dir to Ctrl+E history for quick access." --on-event fish_postexec
+* `fzf-history-widget` "Ctrl+R for history"
+* `search` "`CTRL`+`F` Fuzzy recursive search files by name in current directory & append selection to current command"
+* `search-contents` "`ALT`+`CTRL`+`F` search (fuzzy) file by contents"
+* `scd` "`Ctrl`+`E` to access most frequently visited directories."
 * `update-fzf` "Installs or updates fzf"
-* `freq` "Line frequency in piped input"
+* `freq` "Line frequency in piped input. See <https://gist.github.com/rsvp/1859875>"
 * `bind_bang` "Type `!!` to get last command"
 * `bind_dollar` "Type `!\$` to get last command argument"
 <hr/>
