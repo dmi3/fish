@@ -1,6 +1,6 @@
 #  Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://github.com/junegunn/fzf)
 #
-#  * See [Official Fist documentation](https://fishshell.com/docs/current/)
+#  * See [Official Fish documentation](https://fishshell.com/docs/current/)
 #  * Works nice with my [Kitty shell config](https://github.com/dmi3/bin/blob/master/config/kitty/kitty.conf) and [useful script collection](https://github.com/dmi3/bin)
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
