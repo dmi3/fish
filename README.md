@@ -11,6 +11,7 @@ Instalation
    - **All**: run `./_install.fish` ⚠ this will remove `~/.config/fish`! Backup before running
    - **Some**: [source](https://github.com/dmi3/bin/blob/master/config.fish) files you are interested in your `~/.config/fish/config.fish`
 3. Install [fzf](https://github.com/junegunn/fzf) or run `fish -c update-fzf`
+#  Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
 <hr/>
 
 # [aliases.fish](https://github.com/dmi3/fish/blob/master/aliases.fish)
@@ -34,6 +35,22 @@ Instalation
   - Use [nicl](https://github.com/dmi3/nicl) in installed
 * If [sssh2](https://github.com/dmi3/bin/blob/master/sssh2) installed - use it instead of ssh
 * Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
+* `ll` "Scroll ll if theres more files that fit on screen"
+* `mkcd` "Create and cd to directory"
+* `amount` "Mount archive"
+* `aumount` "Unmount all mounted archive (and gvfs locations)"
+* `copy` "Copy pipe or argument"
+* `copypath` "Copy full file path"
+* `color` "Print color"
+* `reset_windows`  "Reset all windows size and bring it to main monitor. Useful if DE messes up in multiple monitor configuration"
+* `nano
+* `run` "Make file executable, then run it"
+* `launch` "Launch program"
+* `open` "Open file in new process"
+* `b` "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
+* `c` "Math using Python"
+* `subl` "Starts Sublime Text. Additionally supports piping (i.e. `ls | subl`) and urls (i.e. `subl http://jenkins/logs`)"
+* `qr` "Prints QR"
 <hr/>
 
 # [colors.fish](https://github.com/dmi3/fish/blob/master/colors.fish)
@@ -60,6 +77,16 @@ Entry point that includes all other configs
 # [developer.fish](https://github.com/dmi3/fish/blob/master/developer.fish)
 
 Functions useful for developers  
+* `git-revert-file` "Revert single file in git"
+* `git-wat` "Show 5 latest commits"
+* `git-pr` "Create PR on Github"
+* `gradle` "Use ./gradlew if exists"
+* `src` 'Open/edit source of script or function located in $PATH' --wraps which
+  switch (functions --details $argv)
+      gedit (functions --details $argv)
+* `td` "Add to ~/todo.md list"
+* `sdkman` "sdkman"
+* `sdkman-init` "Inits sdkman"
 <hr/>
 
 # [main.fish](https://github.com/dmi3/fish/blob/master/main.fish)
@@ -83,6 +110,20 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 * Prints directory and currently running command in tab title ↓
 
 <img src="https://developer.run/pic/fish_title.png"/>
+# https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish
+* `fish_user_key_bindings
+* `fish_title
+* `fish_greeting
+* `show_exit_code --on-event fish_postexec` "Show exit code on command failure"
+* `save_dir --on-event fish_postexec` "If command was executed if directory, save dir to Ctrl+E history for quick access"
+* `fzf-history-widget
+* `search` "Search files by mask, case insensitive, output with full path"
+* `search-contents` "Search file contents"
+* `scd
+* `update-fzf` "Installs or updates fzf"
+* `freq` "Line frequency in piped input"
+* `bind_bang
+* `bind_dollar
 <hr/>
 
 # [prompt.fish](https://github.com/dmi3/fish/blob/master/prompt.fish)
@@ -91,6 +132,7 @@ Two line propmt with full path and Git integration that scales nicely.
 <img src="https://developer.run/pic/fish_prompt.gif">
      #     set_color F92672
      #     echo -n " ⬆$__git_unpushed_commits "
+* `fish_prompt
 <hr/>
 
 # [singlecmd.fish](https://github.com/dmi3/fish/blob/master/singlecmd.fish)
@@ -135,4 +177,15 @@ Usage
 
 Calls to various CLI friendly web services
 
+* `random-name
+* `random-alias
+* `random-email` "Copy random email in one of Mailinator subdomains and provide link to check it"
+* `random-password` "Generate random password" --argument-names 'length'
+* `weather` "Show weather"
+* `xsh` "Prepend this to command to explain its syntax i.e. `xsh iptables -vnL --line-numbers`"
+* `transfer` "Upload file to transfer.sh"
+* `translate
+* `syn` "Synonym"
+* `emoji` "Search emoji"
+* `waitweb --argument-names 'url'` 'Wait until web resource is available'
 <hr/>
