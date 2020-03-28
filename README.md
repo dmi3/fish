@@ -105,8 +105,7 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
   - Comes handy when you start typing command, then realize wrong dir
 * Prints error status in case of command failure
 * Prints directory and currently running command in tab title ↓
-
-<img src="https://developer.run/pic/fish_title.png"/>
+  - <img src="https://developer.run/pic/fish_title.png"/>
 * `fish_user_key_bindings
 * `fish_title
 * `fish_greeting
