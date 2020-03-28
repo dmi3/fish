@@ -5,7 +5,7 @@
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 function fish_user_key_bindings --description "Key bindings. Go to functions definition for description. Use `fish_key_reader`. [Docs](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish)"
-#  * Clear input on Ctrl+U
+#  * Clear input on `Ctrl`+`U`
     bind \cu 'commandline "";'
     
     if type -q fzf # Use fzf if installed
@@ -18,13 +18,13 @@ function fish_user_key_bindings --description "Key bindings. Go to functions def
       bind \cr history-search-backward
     end
 
-#  * Exit on ESC if single command mode enabled
+#  * Exit on `Esc` if single command mode enabled
 #    - See <https://github.com/dmi3/fish/blob/master/singlecmd.fish>
     if [ "$SINGLE_COMMAND" = "true" ]
       bind \e 'exit 0'
     end
 
-#  * Convinient navigation using `Alt+Ctrl` + `→` `←` `↑`
+#  * Convinient directory navigation using `Alt+Ctrl` + `→` `←` `↑`
 #    - History back/forward/go to parent dir
 #    - You can use Fish as file manager!
 #    - Comes handy when you start typing command, then realize wrong dir
@@ -38,7 +38,7 @@ function fish_user_key_bindings --description "Key bindings. Go to functions def
     bind ! bind_bang
     bind '$' bind_dollar
 
-#  * Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings). See <https://developer.run/36>
+#  * Send terminate on `Ctrl`+`Shift`+`C` to free `Ctrl`+`C` for copy (in terminal settings). See <https://developer.run/36>
     stty intr \^C
 end
 
@@ -89,12 +89,12 @@ end
 
 set -x FZF_DEFAULT_OPTS --prompt="⌕ "
 
-#  * Ctrl+R show fzf (fuzzy) history search where you can:
-#    - Super advanched analog or `Ctrl+R` in Bash
+#  * `Ctrl`+`R` show fzf (fuzzy) history search where you can:
+#    - Super advanched analog or `Ctrl`+`R` in Bash
 #    - Execute previos command
 #    - Edit command before execution
 #    - Delete history entry (very useful for no longer actual commands)
-#  <img src="https://developer.run/pic/fish_history.png"/>
+#    - <img src="https://developer.run/pic/fish_history.png"/>
 function fzf-history-widget --description "Ctrl+R for history"
     history merge; history | fzf -q (commandline) -e +m --tiebreak=index --sort \
       --preview-window 'up:50%:wrap:hidden' \

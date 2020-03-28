@@ -91,22 +91,22 @@ Functions useful for developers
 Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://github.com/junegunn/fzf)
 * See [Official Fish documentation](https://fishshell.com/docs/current/)
 * Works nice with my [Kitty shell config](https://github.com/dmi3/bin/blob/master/config/kitty/kitty.conf) and [useful script collection](https://github.com/dmi3/bin)
-* Clear input on Ctrl+U
-* Exit on ESC if single command mode enabled
+* Clear input on `Ctrl`+`U`
+* Exit on `Esc` if single command mode enabled
   - See <https://github.com/dmi3/fish/blob/master/singlecmd.fish>
-* Convinient navigation using `Alt+Ctrl` + `→` `←` `↑`
+* Convinient directory navigation using `Alt+Ctrl` + `→` `←` `↑`
   - History back/forward/go to parent dir
   - You can use Fish as file manager!
   - Comes handy when you start typing command, then realize wrong dir
-* Send terminate on Ctrl+Shift+C to free Ctrl+C for copy (in terminal settings). See <https://developer.run/36>
+* Send terminate on `Ctrl`+`Shift`+`C` to free `Ctrl`+`C` for copy (in terminal settings). See <https://developer.run/36>
 * Prints directory and currently running command in tab title ↓
   - <img src="https://developer.run/pic/fish_title.png"/>
-* Ctrl+R show fzf (fuzzy) history search where you can:
-  - Super advanched analog or `Ctrl+R` in Bash
+* `Ctrl`+`R` show fzf (fuzzy) history search where you can:
+  - Super advanched analog or `Ctrl`+`R` in Bash
   - Execute previos command
   - Edit command before execution
   - Delete history entry (very useful for no longer actual commands)
-<img src="https://developer.run/pic/fish_history.png"/>
+  - <img src="https://developer.run/pic/fish_history.png"/>
 * Ignore `ls`, `ll`, and `cd` history. `Ctrl+E` is better way to access previosly visited directories
 * `fish_user_key_bindings` "Key bindings. Go to functions definition for description. Use `fish_key_reader`. [Docs](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_default_key_bindings.fish)"
 * `fish_title` "Prints directory and currently running command in tab title"
