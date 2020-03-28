@@ -2,6 +2,11 @@
 
 # [_install.fish](https://github.com/dmi3/fish/blob/master/_install.fish)
 
+     _____ _     _   
+    |   __|_|___| |_ 
+    |   __| |_ -|   |
+    |__|  |_|___|_|_|
+                       
 Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
 * Lots of functions/ideas are easily portable to Bash/Zsh/your preffered shell
 *  - Feel free to explore!
