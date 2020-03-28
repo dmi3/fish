@@ -1,52 +1,51 @@
 #
-#  Useful aliases
+#  ## Useful aliases
 #
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 
-# Create missing directories in path
+#  * Create missing directories in path when calling `mkdir`
 alias mkdir='mkdir -pv'
 
-# Print full file path
+#  * `path` command to print full file path
 alias path='readlink -e'
 
-# Remove directories but ask nicely
+#  * `rmm` command to remove directories, but ask nicely
 alias rmm='rm -rvI'
 
-# Copy directories but ask nicely
+#  * `cpp` command to copy directories, but ask nicely
 alias cpp='cp -R'
 
-# add current directory to path
+#  * Command to add current directory to path
 alias add-to-path='set -U fish_user_paths (pwd) $fish_user_paths'
 
-# Human readable sizes (i.e. Mb, Gb etc)
+# Update `PATH` variable
+alias path-update='set -gx PATH (bash -c "source ~/git/stuff/config/path; echo \$PATH")'
+
+#  * Human readable sizes for `df`, `du`, `free` (i.e. Mb, Gb etc)
 alias df='df -h'
 alias du='du -ch'
 alias free='free -m'
 
-alias xs='cd'
-
-alias ...='cd ../..'
-
-# Free space on physical drives
+#  * `fs` command to show free space on physical drives
 alias fs='df -h -x squashfs -x tmpfs -x devtmpfs'
 
-# Lists disks
+#  * `disks` command to List disks
 alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
 
-# List partitions
-alias partitions='lsblk -o HOTPLUG,NAME,LABEL,MOUNTPOINT,SIZE,MODEL,PARTLABEL,TYPE | grep -v loop | cut -c1-$COLUMNS'
+#  * `partitions` command to list partitions
+alias partitions='lsblk -o HOTPLUG,NAME,LABEL,MOUNTPOINT,SIZE,MODEL,PARTLABEL,TYPE,UUID | grep -v loop | cut -c1-$COLUMNS'
 
-# Size of file or directory
+#  * `sizeof` command to show size of file or directory
 alias sizeof="du -hs"
 
-# Connect to wifi
+#  * `connect` command Connect to wifi from terminal
 alias connect=nmtui
 
-# Prevent locking untill next reboot
+#  * `lockblock` command to prevent screen  locking untill next reboot
 alias lockblock='killall xautolock; xset s off; xset -dpms; echo ok'
 
-# Save file with provided name
+#  * `wget` to save file with provided name
 alias wget='wget --content-disposition'
 
 function ll --description "Scroll ll if theres more files that fit on screen"
@@ -132,25 +131,25 @@ function c --description "Math using Python"
   python -c "print($argv)"
 end
 
-# If Sublime Text installed - use it instead of Gedit
+#  * If Sublime Text installed - use it instead of Gedit
 if type -q subl
   alias gedit=subl
 end
 
-# Show 3 (next and prev) months in cal, start week on monday
-# Use [nicl](https://github.com/dmi3/nicl) in installed
+#  * Show 3 (next and prev) months in cal, start week on monday
+#    - Use [nicl](https://github.com/dmi3/nicl) in installed
 if type -q nicl
   alias cal="nicl -w3 -f ~/git/stuff/documents/bank_days.csv"  
 else
   alias cal="ncal -bM3"
 end
 
-# If [sssh2](https://github.com/dmi3/bin/blob/master/sssh2) installed - use it instead of ssh
+#  * If [sssh2](https://github.com/dmi3/bin/blob/master/sssh2) installed - use it instead of ssh
 if type -q sssh2
   alias ssh=sssh2
 end
 
-# Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
+#  * Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
 if type -q kitty
   alias icat="kitty +kitten icat"
 end

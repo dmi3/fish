@@ -16,20 +16,24 @@ Instalation
 # [aliases.fish](https://github.com/dmi3/fish/blob/master/aliases.fish)
 
 ## Useful aliases
-Create missing directories in path when calling `mkdir`
-Print full file path
-Remove directories, but ask nicely
-Copy directories, but ask nicely
-Add current directory to path
-Update `PATH` variable
-Human readable sizes for `df`, `du`, `free` (i.e. Mb, Gb etc)
-Free space on physical drives
-List disks
-List partitions
-Size of file or directory
-Connect to wifi
-Prevent locking untill next reboot
-`wget` to save file with provided name
+* Create missing directories in path when calling `mkdir`
+* `path` command to print full file path
+* `rmm` command to remove directories, but ask nicely
+* `cpp` command to copy directories, but ask nicely
+* Command to add current directory to path
+* Human readable sizes for `df`, `du`, `free` (i.e. Mb, Gb etc)
+* `fs` command to show free space on physical drives
+* `disks` command to List disks
+* `partitions` command to list partitions
+* `sizeof` command to show size of file or directory
+* `connect` command Connect to wifi from terminal
+* `lockblock` command to prevent screen  locking untill next reboot
+* `wget` to save file with provided name
+* If Sublime Text installed - use it instead of Gedit
+* Show 3 (next and prev) months in cal, start week on monday
+  - Use [nicl](https://github.com/dmi3/nicl) in installed
+* If [sssh2](https://github.com/dmi3/bin/blob/master/sssh2) installed - use it instead of ssh
+* Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
 <hr/>
 
 # [colors.fish](https://github.com/dmi3/fish/blob/master/colors.fish)

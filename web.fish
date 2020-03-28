@@ -59,6 +59,10 @@ function syn --description "Synonym"
   curl http://words.bighugelabs.com/api/2/(cat ~/git/stuff/keys/bighugelabs)/$argv/
 end
 
+function emoji --description "Search emoji"
+  curl -s -X GET https://www.emojidex.com/api/v1/search/emoji -d code_cont=$argv | jq -r '.emoji | .[] | .moji | select(. != null)' | tr '\n' ' '
+end
+
 function waitweb --argument-names 'url' --description 'Wait until web resource is available'
   set -q url || set url 'google.com'
   printf "Waithing for the $url"
