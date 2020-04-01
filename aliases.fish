@@ -1,6 +1,8 @@
 #
 #  ## Useful aliases
 #
+#  * We also have [Bash version](https://github.com/dmi3/bin/blob/master/aliases.bash), and portable [Over-SSH version](https://github.com/dmi3/bin/blob/master/sssh2#L39-L64)
+#
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 
@@ -31,6 +33,8 @@ alias free='free -m'
 alias fs='df -h -x squashfs -x tmpfs -x devtmpfs'
 
 #  * `disks` command to List disks
+#    - Clearly shows which disks are mounted temporary
+#    - I always run this command before `dd` sd-card, to make 100% sure not to override system partition
 alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
 
 #  * `partitions` command to list partitions
