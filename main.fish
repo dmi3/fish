@@ -58,6 +58,7 @@ end
 
 function show_exit_code --description "Show exit code on command failure" --on-event fish_postexec
     set -l last_status $status
+    set -g CMD_START_TIME (date)
     if [ $last_status -ne 0 -a $argv != "" ]
       echo (set_color F92672)"✖ $last_status"
     end
@@ -72,6 +73,11 @@ function show_exit_code --description "Show exit code on command failure" --on-e
       end
       exit 0
     end  
+end
+
+function what-did-just-happened --description "Show start time, and duration of last executed command"
+  echo "Started: $CMD_START_TIME"
+  echo "Duration: $CMD_DURATIONms"
 end
 
 function save_dir --description "If command was executed if directory, save dir to Ctrl+E history for quick access." --on-event fish_postexec

@@ -26,6 +26,7 @@ Instalation
 # [aliases.fish](https://github.com/dmi3/fish/blob/master/aliases.fish)
 
 ## Useful aliases
+* We also have [Bash version](https://github.com/dmi3/bin/blob/master/aliases.bash), and portable [Over-SSH version](https://github.com/dmi3/bin/blob/master/sssh2#L39-L64)
 * Create missing directories in path when calling `mkdir`
 * `path` command to print full file path
 * `rmm` command to remove directories, but ask nicely
@@ -34,6 +35,8 @@ Instalation
 * Human readable sizes for `df`, `du`, `free` (i.e. Mb, Gb etc)
 * `fs` command to show free space on physical drives
 * `disks` command to List disks
+  - Clearly shows which disks are mounted temporary
+  - I always run this command before `dd` sd-card, to make 100% sure not to override system partition
 * `partitions` command to list partitions
 * `sizeof` command to show size of file or directory
 * `connect` command Connect to wifi from terminal
@@ -121,6 +124,7 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 * `fish_title` "Prints directory and currently running command in tab title. `user@host` in prompt when connected via ssh."
 * `fish_greeting` "Prints `/var/run/motd.dynamic` as greeting. Use in combination with [headlines.sh](https://github.com/dmi3/bin/blob/master/headlines.sh) to see top news"
 * `show_exit_code` "Show exit code on command failure" --on-event fish_postexec
+* `what-did-just-happened` "Show start time, and duration of last executed command"
 * `save_dir` "If command was executed if directory, save dir to Ctrl+E history for quick access." --on-event fish_postexec
 * `fzf-history-widget` "Ctrl+R for history"
 * `search` "`CTRL`+`F` Fuzzy recursive search files by name in current directory & append selection to current command"
