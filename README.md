@@ -1,5 +1,9 @@
 # Fish Shell Goodies
 
+# [.gitignore](https://github.com/dmi3/fish/blob/master/.gitignore)
+
+<hr/>
+
 # [_install.fish](https://github.com/dmi3/fish/blob/master/_install.fish)
 
      _____ _     _   
@@ -46,6 +50,7 @@ Instalation
 * Show 3 (next and prev) months in cal, start week on monday
   - Use [nicl](https://github.com/dmi3/nicl) in installed
 * If [sssh2](https://github.com/dmi3/bin/blob/master/sssh2) installed - use it instead of ssh
+* If [plug](https://github.com/dmi3/bin/blob/master/plug) installed - use it for interactive mount/unmount of USB drives 
 * Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
 * `ll` "Scroll ll if theres more files that fit on screen"
 * `mkcd` "Create and cd to directory"
@@ -185,6 +190,7 @@ Usage
 Calls to various CLI friendly web services
 
 * `myip` Shows external ip
+* `myipi` Shows internal ip
 * `whereami` is like whoami but shows your external ip and geolocation
 * Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
 * Show hi-res album art of currently playing song in Spotify

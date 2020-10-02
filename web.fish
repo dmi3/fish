@@ -5,6 +5,9 @@
 #  * `myip` Shows external ip
 alias myip='curl ifconfig.co'
 
+#  * `myipi` Shows internal ip
+alias myipi='hostname -I | awk "{print \$1}"'
+
 #  * `whereami` is like whoami but shows your external ip and geolocation
 alias whereami='curl ifconfig.co/json'
 

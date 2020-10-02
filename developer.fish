@@ -11,7 +11,7 @@ function git-revert-file --description "Revert single file in git"
 end
 
 function git-wat --description "Show 5 latest commits"
-  git log --pretty="format:%s" --abbrev-commit  HEAD~5..HEAD
+  git log --pretty="format:%Cgreen%<(17,trunc)%an%Creset%s" --abbrev-commit  HEAD~5..HEAD
 end
 
 function git-pr --description "Create PR on Github"
@@ -47,7 +47,7 @@ end
 
 alias copy-patch='echo (cd ~/safe/patches; ls -t | head -10 | fzf | xargs cat | xclip -sel clip)'
 
-alias server-here='python -m SimpleHTTPServer 8080'
+alias server-here='python3 -m http.server 8888'
 
 function sdkman --description "sdkman"
   bash -c "source ~/.sdkman/bin/sdkman-init.sh; sdk $argv"

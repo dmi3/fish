@@ -153,6 +153,11 @@ if type -q sssh2
   alias ssh=sssh2
 end
 
+#  * If [plug](https://github.com/dmi3/bin/blob/master/plug) installed - use it for interactive mount/unmount of USB drives 
+if type -q plug
+  alias unplug='plug -u'
+end
+
 #  * Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
 if type -q kitty
   alias icat="kitty +kitten icat"
