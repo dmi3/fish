@@ -110,7 +110,7 @@ function fzf-history-widget --description "Ctrl+R for history"
       --bind "ctrl-x:execute(printf {} | xclip -sel clip)+cancel+cancel" \
       --bind "ctrl-a:toggle-preview" \
       --bind "ctrl-e:execute(echo ' eval scd')+cancel+cancel" \
-      --header "[⏎] run; [←] edit; [del] delete; Ctrl+X copy; Ctrl+A show full"\
+      --header "[⏎] run; [←] edit; [del] delete; [ctrl]+[x] copy; [ctrl]+[a] show full;"\
       | read -l -d \0 result # -d is needed to avoid using space (history ignore) as delimeter
     and commandline $result
     and commandline -f repaint
