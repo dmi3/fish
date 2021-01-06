@@ -5,8 +5,8 @@
 #  * `myip` Shows external ip
 alias myip='curl ifconfig.co'
 
-#  * `myipi` Shows internal ip
-alias myipi='hostname -I | awk "{print \$1}"'
+#  * `localip` Shows (local) internal ip
+alias localip="ip -o route get to 1.1.1.1 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'"
 
 #  * `whereami` is like whoami but shows your external ip and geolocation
 alias whereami='curl ifconfig.co/json'
@@ -77,7 +77,7 @@ function waitweb --description 'Wait until web resource is available. Useful whe
 end
 
 #  * Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
-alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s | convert  -resize 300 -negate -fuzz 10% -transparent black png: png:- | kitty +kitten icat'
+alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s | convert -resize 50% -negate -fuzz 10% -transparent black png: png:- | kitty +kitten icat'
 
 #  * Show hi-res album art of currently playing song in Spotify
 #    - Requires [sp](https://gist.github.com/wandernauta/6800547)

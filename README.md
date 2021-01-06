@@ -190,7 +190,7 @@ Usage
 Calls to various CLI friendly web services
 
 * `myip` Shows external ip
-* `myipi` Shows internal ip
+* `localip` Shows (local) internal ip
 * `whereami` is like whoami but shows your external ip and geolocation
 * Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
 * Show hi-res album art of currently playing song in Spotify
