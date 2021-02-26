@@ -18,6 +18,12 @@ alias rmm='rm -rvI'
 #  * `cpp` command to copy directories, but ask nicely
 alias cpp='cp -R'
 
+#  * `cp` to ask when overwriting files
+alias cp='cp -i'
+
+#  * `mv` to ask when overwriting files
+alias mv='mv -i'
+
 #  * Command to add current directory to path
 alias add-to-path='set -U fish_user_paths (pwd) $fish_user_paths'
 

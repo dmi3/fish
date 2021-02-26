@@ -35,6 +35,8 @@ Instalation
 * `path` command to print full file path
 * `rmm` command to remove directories, but ask nicely
 * `cpp` command to copy directories, but ask nicely
+* `cp` to ask when overwriting files
+* `mv` to ask when overwriting files
 * Command to add current directory to path
 * Human readable sizes for `df`, `du`, `free` (i.e. Mb, Gb etc)
 * `fs` command to show free space on physical drives
@@ -96,12 +98,14 @@ Entry point that includes all other configs
 Functions useful for developers  
 * `git-revert-file` "Revert single file in git"
 * `git-wat` "Show 5 latest commits"
+* `git-recent-branches` "Show recentbranches"
 * `git-pr` "Create PR on Github"
 * `gradle` "Use ./gradlew if exists"
 * `src` 'Open/edit source of script or function located in $PATH' --wraps which
 * `td` "Add to ~/todo.md list"
 * `sdkman` "sdkman"
 * `sdkman-init` "Inits sdkman"
+* `bak` "Copies (backups) file in same folder with .bak extension"
 <hr/>
 
 # [main.fish](https://github.com/dmi3/fish/blob/master/main.fish)
