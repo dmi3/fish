@@ -58,6 +58,9 @@ alias lockblock='killall xautolock; xset s off; xset -dpms; echo ok'
 #  * `wget` to save file with provided name
 alias wget='wget --content-disposition'
 
+#  * `unset` to unset enviroment variable
+alias unset 'set --erase'
+
 function ll --description "Scroll ll if theres more files that fit on screen"
   ls -l $argv --color=always | less -R -X -F
 end
@@ -78,7 +81,7 @@ function aumount --description "Unmount all mounted archive (and gvfs locations)
   gvfs-mount --unmount $XDG_RUNTIME_DIR/gvfs/*
 end
 
-# Useful for piping, i.e. `cat ~/.ssh/id_rsa.pub | copy`
+# Useful for piping, i.e. `cat ~/.ssh/id_rsa.pub | copy` or `uuid | copy`
 # If arguments are given, copies it to clipboard
 function copy --description "Copy pipe or argument"
   if [ "$argv" = "" ]
@@ -130,7 +133,7 @@ function launch --description "Launch program"
 end
 
 function open --description "Open file in new process"
-  env XDG_CURRENT_DESKTOP=X-Generic xdg-open $argv & disown
+  env XDG_CURRENT_DESKTOP=X-Generic xdg-open $argv >/dev/null 2>&1 & disown
 end
 
 function b --description "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
@@ -162,6 +165,7 @@ end
 #  * If [plug](https://github.com/dmi3/bin/blob/master/plug) installed - use it for interactive mount/unmount of USB drives 
 if type -q plug
   alias unplug='plug -u'
+  alias plug='cd (command plug)'
 end
 
 #  * Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
@@ -181,10 +185,13 @@ function subl --description "Starts Sublime Text. Additionally supports piping (
   end
 end
 
-function qr --description "Prints QR"
+function qr --description "Prints QR. E.g. super useful when you need to transfer private key to the phone without intermediaries `cat ~/.ssh/topsecret.pem | qr`"
   if [ "$argv" = "" ]
     qrencode --background=00000000 --foreground=FFFFFF -o - | kitty +kitten icat
   else
     printf "$argv" | qrencode --background=00000000 --foreground=FFFFFF -o - | kitty +kitten icat
   end    
 end
+
+alias sharewifi='qr "WIFI:T:WPA;S:aaa;P:bbb;;"'
+
