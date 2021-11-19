@@ -33,7 +33,7 @@ Instalation
 * `cpp` command to copy directories, but ask nicely
 * `cp` to ask when overwriting files
 * `mv` to ask when overwriting files
-* Command to add current directory to path
+* `add-to-path` Command to add current directory to path
 * Human readable sizes for `df`, `du`, `free` (i.e. Mb, Gb etc)
 * `fs` command to show free space on physical drives
 * `disks` command to List disks
@@ -45,12 +45,14 @@ Instalation
 * `lockblock` command to prevent screen  locking untill next reboot
 * `wget` to save file with provided name
 * `unset` to unset enviroment variable
+* Prepend `sudo` to `nano` command if file is not editable by current user
+  - Warn if file does no exist
 * If Sublime Text installed - use it instead of Gedit
-* Show 3 (next and prev) months in cal, start week on monday
+* Show 3 (next and prev) months in `cal`, start week on monday
   - Use [nicl](https://github.com/dmi3/nicl) in installed
 * If [sssh2](https://github.com/dmi3/bin/blob/master/sssh2) installed - use it instead of ssh
 * If [plug](https://github.com/dmi3/bin/blob/master/plug) installed - use it for interactive mount/unmount of USB drives 
-* Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
+* `icat` Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
 * `ll` "Scroll ll if theres more files that fit on screen"
 * `mkcd` "Create and cd to directory"
 * `amount` "Mount archive"
@@ -61,8 +63,8 @@ Instalation
 * `reset_windows`  "Reset all windows size and bring it to main monitor. Useful if DE messes up in multiple monitor configuration"
 * `nano
 * `run` "Make file executable, then run it"
-* `launch` "Launch program"
-* `open` "Open file in new process"
+* `launch` "Launch GUI program - hide output and don't close when terminal closes"
+* `open` "Open file by default application in new process"
 * `b` "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
 * `c` "Math using Python"
 * `subl` "Starts Sublime Text. Additionally supports piping (i.e. `ls | subl`) and urls (i.e. `subl http://jenkins/logs`)"
@@ -93,9 +95,9 @@ Entry point that includes all other configs
 # [developer.fish](https://github.com/dmi3/fish/blob/master/developer.fish)
 
 Functions useful for developers  
-* Cat file, but with syntax highlights
-* Git show unpushed commits
-* Start serving files in current directory and open browser
+* `ccat` Cat file, but with syntax highlighting
+* `git-show-unpushed-commits` Git show unpushed commits
+* `server-here` Start serving files in current directory and open browser
 * `git-revert-file` "Revert single file in git"
 * `git-wat` "Show 5 latest commits"
 * `git-recent-branches` "Show recentbranches"
@@ -148,7 +150,11 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 # [prompt.fish](https://github.com/dmi3/fish/blob/master/prompt.fish)
 
 <img src="https://developer.run/pic/fish_prompt.gif">
-* `fish_prompt` "Two line prompt with full path and Git integration that scales nicely"
+
+Description
+-----------
+Two line prompt with full path and Git integration that scales nicely
+* `fish_prompt
 <hr/>
 
 # [singlecmd.fish](https://github.com/dmi3/fish/blob/master/singlecmd.fish)
@@ -196,8 +202,8 @@ Calls to various CLI friendly web services
 * `myip` Shows external ip
 * `localip` Shows (local) internal ip
 * `whereami` is like whoami but shows your external ip and geolocation
-* Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
-* Show hi-res album art of currently playing song in Spotify
+* `xkcd` Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
+* `albumart` Show hi-res album art of currently playing song in Spotify
   - Requires [sp](https://gist.github.com/wandernauta/6800547)
 * `random-name` "Random name for registration on random websites. How about Helen Lovick? Roger Rice?"
 * `random-alias` "Docker-like alias generator: `thirsty_mahavira`, `boring_heisenberg`. Don't know how to name file/project/branch/file? Use this!"

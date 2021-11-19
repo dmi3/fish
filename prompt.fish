@@ -1,8 +1,12 @@
 #  <img src="https://developer.run/pic/fish_prompt.gif">
 #
+#  Description
+#  -----------
+#  Two line prompt with full path and Git integration that scales nicely
+#
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
-function fish_prompt --description "Two line prompt with full path and Git integration that scales nicely"
+function fish_prompt
     if set -q SSH_CLIENT || set -q SSH_TTY
         set_color 909d63 --bold;
         set __ssh true

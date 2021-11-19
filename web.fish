@@ -76,9 +76,9 @@ function waitweb --description 'Wait until web resource is available. Useful whe
   notify-send -u critical "$url is online!"
 end
 
-#  * Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
+#  * `xkcd` Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
 alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s | convert -resize 50% -negate -fuzz 10% -transparent black png: png:- | kitty +kitten icat'
 
-#  * Show hi-res album art of currently playing song in Spotify
+#  * `albumart` Show hi-res album art of currently playing song in Spotify
 #    - Requires [sp](https://gist.github.com/wandernauta/6800547)
 alias albumart='sp metadata | grep -Po "(?<=url\|).*" | xargs curl -s | grep -Po "https:[^\"]*" | grep "i.scdn.co/image/" | head -1 | xargs curl -s | kitty +kitten icat'

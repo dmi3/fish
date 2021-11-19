@@ -3,10 +3,10 @@
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
 
-#  * Cat file, but with syntax highlights
+#  * `ccat` Cat file, but with syntax highlighting
 alias ccat='pygmentize -g'
 
-#  * Git show unpushed commits
+#  * `git-show-unpushed-commits` Git show unpushed commits
 alias git-show-unpushed-commits='git cherry -v' 
 
 function git-revert-file --description "Revert single file in git"
@@ -52,7 +52,7 @@ function td --description "Add to ~/todo.md list"
   echo -e "\n- [ ] $argv" >> ~/todo.md
 end
 
-#  * Start serving files in current directory and open browser
+#  * `server-here` Start serving files in current directory and open browser
 alias server-here='python3 -m http.server 8888 && xdg-open http://localhost:8888'
 
 function sdkman --description "Run sdkman"

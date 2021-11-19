@@ -24,7 +24,7 @@ alias cp='cp -i'
 #  * `mv` to ask when overwriting files
 alias mv='mv -i'
 
-#  * Command to add current directory to path
+#  * `add-to-path` Command to add current directory to path
 alias add-to-path='set -U fish_user_paths (pwd) $fish_user_paths'
 
 # Update `PATH` variable
@@ -107,8 +107,8 @@ function reset_windows --description  "Reset all windows size and bring it to ma
   end
 end
 
-# Prepend `sudo` to `nano` command if file is not editable by current user
-# Warn if file does no exist
+#  * Prepend `sudo` to `nano` command if file is not editable by current user
+#    - Warn if file does no exist
 function nano
   if not test -e "$argv"
     read -p "echo 'File $argv does not exist. Ctrl+C to cancel'" -l confirm
@@ -128,11 +128,11 @@ function run --description "Make file executable, then run it"
   eval "./$argv"
 end
 
-function launch --description "Launch program"
+function launch --description "Launch GUI program - hide output and don't close when terminal closes"
   eval "$argv >/dev/null 2>&1 &" & disown
 end
 
-function open --description "Open file in new process"
+function open --description "Open file by default application in new process"
   env XDG_CURRENT_DESKTOP=X-Generic xdg-open $argv >/dev/null 2>&1 & disown
 end
 
@@ -149,7 +149,7 @@ if type -q subl
   alias gedit=subl
 end
 
-#  * Show 3 (next and prev) months in cal, start week on monday
+#  * Show 3 (next and prev) months in `cal`, start week on monday
 #    - Use [nicl](https://github.com/dmi3/nicl) in installed
 if type -q nicl
   alias cal="nicl -w3 -f ~/git/stuff/documents/bank_days.csv"  
@@ -168,7 +168,7 @@ if type -q plug
   alias plug='cd (command plug)'
 end
 
-#  * Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
+#  * `icat` Show images in [kitty](https://sw.kovidgoyal.net/kitty/)
 if type -q kitty
   alias icat="kitty +kitten icat"
 end
