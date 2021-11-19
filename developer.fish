@@ -51,7 +51,7 @@ end
 
 alias copy-patch='echo (cd ~/safe/patches; ls -t | head -10 | fzf | xargs cat | xclip -sel clip)'
 
-alias server-here='python3 -m http.server 8888'
+alias server-here='python3 -m http.server 8888 && xdg-open http://localhost:8888'
 
 function sdkman --description "sdkman"
   bash -c "source ~/.sdkman/bin/sdkman-init.sh; sdk $argv"
