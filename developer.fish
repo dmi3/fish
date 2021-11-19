@@ -2,8 +2,11 @@
 #
 #  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/fish)
 
+
+#  * Cat file, but with syntax highlights
 alias ccat='pygmentize -g'
 
+#  * Git show unpushed commits
 alias git-show-unpushed-commits='git cherry -v' 
 
 function git-revert-file --description "Revert single file in git"
@@ -49,11 +52,10 @@ function td --description "Add to ~/todo.md list"
   echo -e "\n- [ ] $argv" >> ~/todo.md
 end
 
-alias copy-patch='echo (cd ~/safe/patches; ls -t | head -10 | fzf | xargs cat | xclip -sel clip)'
-
+#  * Start serving files in current directory and open browser
 alias server-here='python3 -m http.server 8888 && xdg-open http://localhost:8888'
 
-function sdkman --description "sdkman"
+function sdkman --description "Run sdkman"
   bash -c "source ~/.sdkman/bin/sdkman-init.sh; sdk $argv"
   sdkman-init
 end

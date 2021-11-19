@@ -93,6 +93,9 @@ Entry point that includes all other configs
 # [developer.fish](https://github.com/dmi3/fish/blob/master/developer.fish)
 
 Functions useful for developers  
+* Cat file, but with syntax highlights
+* Git show unpushed commits
+* Start serving files in current directory and open browser
 * `git-revert-file` "Revert single file in git"
 * `git-wat` "Show 5 latest commits"
 * `git-recent-branches` "Show recentbranches"
@@ -100,7 +103,7 @@ Functions useful for developers
 * `gradle` "Use ./gradlew if exists"
 * `src` 'Open/edit source of script or function located in $PATH' --wraps which
 * `td` "Add to ~/todo.md list"
-* `sdkman` "sdkman"
+* `sdkman` "Run sdkman"
 * `sdkman-init` "Inits sdkman"
 * `bak` "Copies (backups) file in same folder with .bak extension"
 <hr/>
