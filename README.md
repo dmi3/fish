@@ -1,9 +1,5 @@
 # Fish Shell Goodies
 
-# [.gitignore](https://github.com/dmi3/fish/blob/master/.gitignore)
-
-<hr/>
-
 # [_install.fish](https://github.com/dmi3/fish/blob/master/_install.fish)
 
      _____ _     _   
