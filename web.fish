@@ -58,6 +58,7 @@ function translate --description "Translate word using [Yandex](https://github.c
 end
 
 function syn --description "Find synonyms for word"
+  test -e ~/git/stuff/keys/bighugelabs || echo "Get API key at https://words.bighugelabs.com/account/getkey and put in "(status --current-filename)
   curl http://words.bighugelabs.com/api/2/(cat ~/git/stuff/keys/bighugelabs)/$argv/
 end
 
@@ -82,3 +83,12 @@ alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" 
 #  * `albumart` Show hi-res album art of currently playing song in Spotify
 #    - Requires [sp](https://gist.github.com/wandernauta/6800547)
 alias albumart='sp metadata | grep -Po "(?<=url\|).*" | xargs curl -s | grep -Po "https:[^\"]*" | grep "i.scdn.co/image/" | head -1 | xargs curl -s | kitty +kitten icat'
+
+function virustotal --description "Check file hash by virustotal.com"
+  test -e ~/git/stuff/keys/virustotal || echo "Get API key at https://www.virustotal.com/gui/my-apikey and put in "(status --current-filename)
+  curl -sL --request GET \
+  --url https://www.virustotal.com/api/v3/files/(sha256sum $argv | cut -f 1 -d " ") \
+  --header "x-apikey: "(cat ~/git/stuff/keys/virustotal) \
+  | jq ".data .attributes .last_analysis_stats, .data .attributes .tags, .data .attributes .total_votes"
+end
+

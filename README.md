@@ -216,4 +216,5 @@ Calls to various CLI friendly web services
 * `syn` "Find synonyms for word"
 * `emoji` "Search emoji by name"
 * `waitweb` 'Wait until web resource is available. Useful when you are waiting for internet to get back, or Spring to start' --argument-names 'url'
+* `virustotal` "Check file hash by virustotal.com"
 <hr/>
