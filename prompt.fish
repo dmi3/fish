@@ -15,7 +15,7 @@ function fish_prompt
 
     set_color 777 --bold
 
-    set __git_status (git status ^/dev/null | head -1)
+    set __git_status (git status 2> /dev/null | head -1)
     
     # Full path + git trimmed to width of terminal
     set prompt_width (math (pwd | string length) + (string length "$__git_status") + 7)

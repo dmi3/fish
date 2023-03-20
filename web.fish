@@ -6,6 +6,7 @@
 alias myip='curl ifconfig.co'
 
 #  * `localip` Shows (local) internal ip
+# alternative would be `ifdata -pa eth0` from moreutils
 alias localip="ip -o route get to 1.1.1.1 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'"
 
 #  * `whereami` is like whoami but shows your external ip and geolocation
