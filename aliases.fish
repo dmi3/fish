@@ -173,18 +173,6 @@ if type -q kitty
   alias icat="kitty +kitten icat"
 end
 
-function subl --description "Starts Sublime Text. Additionally supports piping (i.e. `ls | subl`) and urls (i.e. `subl http://jenkins/logs`)"
-  if [ (expr substr "$argv[1]" 1 4) = "http" ]
-    curl $argv[1] | subl
-  else if not tty >/dev/null
-    set FILENAME (tempfile)
-    cat >"$FILENAME"
-    /opt/sublime_text/sublime_text "$FILENAME" "$argv"
-  else
-    /opt/sublime_text/sublime_text "$argv"
-  end
-end
-
 function qr --description "Prints QR. E.g. super useful when you need to transfer private key to the phone without intermediaries `cat ~/.ssh/topsecret.pem | qr`"
   if [ "$argv" = "" ]
     qrencode --background=00000000 --foreground=FFFFFF -o - | kitty +kitten icat

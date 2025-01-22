@@ -67,7 +67,6 @@ Instalation
 * `open` "Open file by default application in new process"
 * `b` "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
 * `c` "Math using Python"
-* `subl` "Starts Sublime Text. Additionally supports piping (i.e. `ls | subl`) and urls (i.e. `subl http://jenkins/logs`)"
 * `qr` "Prints QR. E.g. super useful when you need to transfer private key to the phone without intermediaries `cat ~/.ssh/topsecret.pem | qr`"
 <hr/>
 
