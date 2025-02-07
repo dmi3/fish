@@ -207,13 +207,12 @@ Calls to various CLI friendly web services
 * `random-name` "Random name for registration on random websites. How about Helen Lovick? Roger Rice?"
 * `random-alias` "Docker-like alias generator: `thirsty_mahavira`, `boring_heisenberg`. Don't know how to name file/project/branch/file? Use this!"
 * `random-email` "Random email for registration on random websites. Generate random email in one of Mailinator subdomains and provide link to check it. Useful when <http://bugmenot.com/> is not available."
+* `duckmails` "Duck Mails! Woo-oo! Private Duck Address Generator"
 * `random-password` "Generate random password" --argument-names 'length'
 * `weather` "Show weather"
 * `xsh` "Prepend this to command to explain its syntax i.e. `xsh iptables -vnL --line-numbers`"
-* `transfer` "Upload file to transfer.sh"
-* `translate` "Translate word using [Yandex](https://github.com/dmi3/bin/blob/master/yandex-translate.sh)"
 * `syn` "Find synonyms for word"
-* `emoji` "Search emoji by name"
 * `waitweb` 'Wait until web resource is available. Useful when you are waiting for internet to get back, or Spring to start' --argument-names 'url'
+* `uselessfact` "Print random useless fact. Makes checking if internet is awailable little less boring"
 * `virustotal` "Check file hash by virustotal.com"
 <hr/>
