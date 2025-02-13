@@ -1,10 +1,21 @@
 #!/usr/bin/fish
 
-#       _____ _     _   
-#      |   __|_|___| |_ 
-#      |   __| |_ -|   |
-#      |__|  |_|___|_|_|
-#                         
+#                       ___
+#        ___======____=---=)       _____ _     _     
+#      /T            \_--===)     |   __|_|___| |_    
+#      [ \ (0)   \~    \_-==)     |   __| |_ -|   |   
+#       \      / )J~~    \-=)     |__|  |_|___|_|_|   
+#        \\\\___/  )JJ~~~   \)            
+#         \_____/JJ~~~~~    \\
+#         / \  , \J~~~~~     \\
+#        (-\)\=|\\\\\~~~~       L__
+#        (\\\\)  (\\\\\)_           \==__
+#         \V    \\\\\) ===_____   \\\\\\\\\\\\
+#                \V)     \_) \\\\\\\\JJ\J\)
+#                            /J\JT\JJJJ)
+#                            (JJJ| \UUU)
+#                             (UU)
+# 
 #  Fish config with awesome flexible prompt, unicode symbols, better fzf integration and lot of handy functions.
 #  * Lots of functions/ideas are easily portable to Bash/Zsh/your preffered shell
 #  *  - Feel free to explore!
