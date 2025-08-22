@@ -214,6 +214,7 @@ Calls to various CLI friendly web services
 * `xkcd` Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
 * `albumart` Show hi-res album art of currently playing song in Spotify
   - Requires [sp](https://gist.github.com/wandernauta/6800547)
+  Because `/raindrop` with `pleaseParse: {}` does not return such good result as `import/url/parse` we need two requests
 * `random-name` "Random name for registration on random websites. How about Helen Lovick? Roger Rice?"
 * `random-alias` "Docker-like alias generator: `thirsty_mahavira`, `boring_heisenberg`. Don't know how to name file/project/branch/file? Use this!"
 * `random-email` "Random email for registration on random websites. Generate random email in one of Mailinator subdomains and provide link to check it. Useful when <http://bugmenot.com/> is not available."
@@ -225,4 +226,5 @@ Calls to various CLI friendly web services
 * `waitweb` 'Wait until web resource is available. Useful when you are waiting for internet to get back, or Spring to start' --argument-names 'url'
 * `uselessfact` "Print random useless fact. Makes checking if internet is awailable little less boring"
 * `virustotal` "Check file hash by virustotal.com"
+* `raindrop` "Create raindrop at raindrop.io"
 <hr/>

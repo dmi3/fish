@@ -95,4 +95,37 @@ function virustotal --description "Check file hash by virustotal.com"
   | jq ".data .attributes .last_analysis_stats, .data .attributes .tags, .data .attributes .total_votes"
 end
 
+function raindrop --description "Create raindrop at raindrop.io"
+  test -e $raindrop_key || echo "Create test token at https://app.raindrop.io/settings/integrations and put in $raindrop_key"
 
+  set -l url $argv
+  set -l raindrop_key ~/git/stuff/keys/raindrop
+
+  #  Because `/raindrop` with `pleaseParse: {}` does not return such good result as `import/url/parse` we need two requests
+  set -l parse_response (curl -s -H "Authorization: Bearer "(cat $raindrop_key) "https://api.raindrop.io/rest/v1/import/url/parse?url=$url")
+
+  set -l title (echo $parse_response | jq -r '.item.title')
+  set -l excerpt (echo $parse_response | jq -r '.item.excerpt')
+  set -l cover_image (echo $parse_response | jq -r '.item.cover')
+  set -l type (echo $parse_response | jq -r '.item.type')
+  set -l tags (echo $parse_response | jq -r '.item.meta.tags | join(",")')
+
+  set -l create_response (curl -s -X POST \
+    -H "Authorization: Bearer "(cat $raindrop_key) \
+    -H "Content-Type: application/json" \
+    -d '{
+      "link": "'"$url"'",
+      "title": "'"$title"'",
+      "excerpt": "'"$excerpt"'",
+      "cover": "'"$cover_image"'",
+      "type": "'"$type"'",
+      "tags": ["'"$tags"'"]
+    }' \
+    "https://api.raindrop.io/rest/v1/raindrop")
+  
+    if echo $create_response | jq -e '.result == true' >/dev/null
+        echo Success
+    else
+        echo $create_response
+    end
+end  
