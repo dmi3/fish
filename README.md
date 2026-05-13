@@ -38,7 +38,7 @@ Instalation
 ## Useful aliases
 * We also have [Bash version](https://github.com/dmi3/bin/blob/master/aliases.bash), and portable [Over-SSH version](https://github.com/dmi3/bin/blob/master/sssh2#L39-L64)
 * Create missing directories in path when calling `mkdir`
-* `path` command to print full file path
+* `fullpath` command to print full file path
 * `rmm` command to remove directories, but ask nicely
 * `cpp` command to copy directories, but ask nicely
 * `cp` to ask when overwriting files

@@ -9,8 +9,8 @@
 #  * Create missing directories in path when calling `mkdir`
 alias mkdir='mkdir -pv'
 
-#  * `path` command to print full file path
-alias path='readlink -e'
+#  * `fullpath` command to print full file path
+alias fullpath='readlink -e'
 
 #  * `rmm` command to remove directories, but ask nicely
 alias rmm='rm -rvI'
