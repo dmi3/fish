@@ -106,7 +106,7 @@ function fzf-history-widget --description "Ctrl+R for history"
       --preview 'echo {}' \
       --bind "left:execute(printf ' commandline %q' {})+cancel+cancel" \
       --bind "right:execute(printf ' commandline %q' {})+cancel+cancel" \
-      --bind "del:execute(printf ' history delete %q' {})+cancel+cancel" \
+      --bind "del:execute(printf ' echo all | history delete %q' {})+cancel+cancel" \
       --bind "ctrl-x:execute(printf {} | xclip -sel clip)+cancel+cancel" \
       --bind "ctrl-a:toggle-preview" \
       --bind "ctrl-e:execute(echo ' eval scd')+cancel+cancel" \
