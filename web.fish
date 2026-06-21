@@ -96,36 +96,51 @@ function virustotal --description "Check file hash by virustotal.com"
 end
 
 function raindrop --description "Create raindrop at raindrop.io"
-  test -e $raindrop_key || echo "Create test token at https://app.raindrop.io/settings/integrations and put in $raindrop_key"
-
-  set -l url $argv
   set -l raindrop_key ~/git/stuff/keys/raindrop
+  if not test -e $raindrop_key
+    echo "Create token at https://app.raindrop.io/settings/integrations and put in $raindrop_key"
+    return 1
+  end
 
-  #  Because `/raindrop` with `pleaseParse: {}` does not return such good result as `import/url/parse` we need two requests
-  set -l parse_response (curl -s -H "Authorization: Bearer "(cat $raindrop_key) "https://api.raindrop.io/rest/v1/import/url/parse?url=$url")
+  set -l url $argv[1]
+  set -l token (cat $raindrop_key)
 
-  set -l title (echo $parse_response | jq -r '.item.title')
-  set -l excerpt (echo $parse_response | jq -r '.item.excerpt')
-  set -l cover_image (echo $parse_response | jq -r '.item.cover')
-  set -l type (echo $parse_response | jq -r '.item.type')
-  set -l tags (echo $parse_response | jq -r '.item.meta.tags | join(",")')
+  set -l parse_response (curl -s -G -H "Authorization: Bearer $token" --data-urlencode "url=$url" "https://api.raindrop.io/rest/v1/import/url/parse")
 
-  set -l create_response (curl -s -X POST \
-    -H "Authorization: Bearer "(cat $raindrop_key) \
-    -H "Content-Type: application/json" \
-    -d '{
-      "link": "'"$url"'",
-      "title": "'"$title"'",
-      "excerpt": "'"$excerpt"'",
-      "cover": "'"$cover_image"'",
-      "type": "'"$type"'",
-      "tags": ["'"$tags"'"]
-    }' \
-    "https://api.raindrop.io/rest/v1/raindrop")
-  
-    if echo $create_response | jq -e '.result == true' >/dev/null
-        echo Success
-    else
-        echo $create_response
+  set -l title (echo $parse_response | jq -r '.item.title // empty')
+  set -l excerpt (echo $parse_response | jq -r '.item.excerpt // empty')
+  set -l cover (echo $parse_response | jq -r '.item.cover // empty')
+  set -l type (echo $parse_response | jq -r '.item.type // empty')
+  set -l tags_raw (echo $parse_response | jq -r '.item.meta.tags // [] | join(",")')
+
+  # Build JSON payload, only include non-empty fields
+  set -l payload '{ "link": "'$url'"'
+  if test -n "$title"; set payload $payload', "title": "'$title'"'; end
+  if test -n "$excerpt"; set payload $payload', "excerpt": "'$excerpt'"'; end
+  if test -n "$cover"; set payload $payload', "cover": "'$cover'"'; end
+  if test -n "$type"; set payload $payload', "type": "'$type'"'; end
+  if test -n "$tags_raw"
+    # convert comma list to JSON array
+    set -l IFS ','
+    set -l tags_arr
+    for t in (string split , -- $tags_raw)
+      if test -n "$t"
+        set tags_arr $tags_arr '"'$t'"'
+      end
     end
-end  
+    if test (count $tags_arr) -gt 0
+      set payload $payload', "tags": ['(string join , $tags_arr)']'
+    end
+  end
+  set payload $payload' }'
+
+  set -l create_response (curl -s -X POST -H "Authorization: Bearer $token" -H "Content-Type: application/json" -d $payload "https://api.raindrop.io/rest/v1/raindrop")
+
+  if echo $create_response | jq -e '.result == true' >/dev/null 2>&1
+    echo Success
+  else
+    echo $create_response
+    return 1
+  end
+end
+

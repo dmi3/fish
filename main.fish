@@ -117,13 +117,15 @@ function fzf-history-widget --description "Ctrl+R for history"
     and commandline -f execute
 end
 
-function search --description "`CTRL`+`F` Fuzzy recursive search files by name in current directory & append selection to current command"
-  if [ $argv == ""]
-    find $PWD 2>/dev/null | fzf -q "'" \
-      --bind "ctrl-f:execute(echo -e \" search-contents\n\")+cancel+cancel" | read -l result; and commandline -a $result
-  else
-    find $PWD -iname $argv 2>/dev/null  | fzf      
-  end    
+function search --description "CTRL+F Fuzzy recursive search files by name in current directory & append selection to current command"
+    if test -z "$argv"
+        set -l result (find -L $PWD 2>/dev/null | \
+            fzf -q "'" \
+            --bind "ctrl-f:execute(echo -e \" search-contents\n\")+cancel+cancel")
+        and commandline -a -- $result
+    else
+        find -L $PWD -iname "*$argv*" 2>/dev/null | fzf
+    end
 end
 
 function search-contents --description "`ALT`+`CTRL`+`F` search (fuzzy) file by contents"

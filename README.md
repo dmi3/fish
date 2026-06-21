@@ -147,7 +147,7 @@ Better integration of [Fish Shell](https://fishshell.com/) and [fzf](https://git
 * `what-did-just-happened` "Show start time, and duration of last executed command"
 * `save_dir` "If command was executed if directory, save dir to Ctrl+E history for quick access." --on-event fish_postexec
 * `fzf-history-widget` "Ctrl+R for history"
-* `search` "`CTRL`+`F` Fuzzy recursive search files by name in current directory & append selection to current command"
+* `search` "CTRL+F Fuzzy recursive search files by name in current directory & append selection to current command"
 * `search-contents` "`ALT`+`CTRL`+`F` search (fuzzy) file by contents"
 * `scd` "`Ctrl`+`E` to access most frequently visited directories."
 * `update-fzf` "Installs or updates fzf"
@@ -214,7 +214,6 @@ Calls to various CLI friendly web services
 * `xkcd` Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
 * `albumart` Show hi-res album art of currently playing song in Spotify
   - Requires [sp](https://gist.github.com/wandernauta/6800547)
-  Because `/raindrop` with `pleaseParse: {}` does not return such good result as `import/url/parse` we need two requests
 * `random-name` "Random name for registration on random websites. How about Helen Lovick? Roger Rice?"
 * `random-alias` "Docker-like alias generator: `thirsty_mahavira`, `boring_heisenberg`. Don't know how to name file/project/branch/file? Use this!"
 * `random-email` "Random email for registration on random websites. Generate random email in one of Mailinator subdomains and provide link to check it. Useful when <http://bugmenot.com/> is not available."
